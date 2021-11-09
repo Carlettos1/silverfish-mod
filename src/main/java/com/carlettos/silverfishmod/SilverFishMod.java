@@ -10,6 +10,7 @@ import com.carlettos.silverfishmod.mob.MineralSilverfishRenderer;
 import com.carlettos.silverfishmod.server.handler.PacketHandler;
 import com.carlettos.silverfishmod.tooltip.test.DetectorClientTooltip;
 import com.carlettos.silverfishmod.tooltip.test.DetectorTooltip;
+import com.carlettos.silverfishmod.util.Mineral;
 import com.carlettos.silverfishmod.util.Util;
 
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -93,25 +94,25 @@ public class SilverFishMod {
 	}
     
     private void crearAtributos(final EntityAttributeCreationEvent event) {
-        event.put(ListaEntidades.COAL_SILVERFISH, MineralSilverfish.createAttributes().build());
-        event.put(ListaEntidades.DEEPSLATE_COAL_SILVERFISH, MineralSilverfish.createAttributes().build());
-        event.put(ListaEntidades.COPPER_SILVERFISH, MineralSilverfish.createAttributes().build());
-        event.put(ListaEntidades.DEEPSLATE_COPPER_SILVERFISH, MineralSilverfish.createAttributes().build());
-        event.put(ListaEntidades.LAPIS_SILVERFISH, MineralSilverfish.createAttributes().build());
-        event.put(ListaEntidades.DEEPSLATE_LAPIS_SILVERFISH, MineralSilverfish.createAttributes().build());
-        event.put(ListaEntidades.IRON_SILVERFISH, MineralSilverfish.createAttributes().build());
-        event.put(ListaEntidades.DEEPSLATE_IRON_SILVERFISH, MineralSilverfish.createAttributes().build());
-        event.put(ListaEntidades.GOLD_SILVERFISH, MineralSilverfish.createAttributes().build());
-        event.put(ListaEntidades.DEEPSLATE_GOLD_SILVERFISH, MineralSilverfish.createAttributes().build());
-        event.put(ListaEntidades.NETHER_GOLD_SILVERFISH, MineralSilverfish.createAttributes().build());
-        event.put(ListaEntidades.REDSTONE_SILVERFISH, MineralSilverfish.createAttributes().build());
-        event.put(ListaEntidades.DEEPSLATE_REDSTONE_SILVERFISH, MineralSilverfish.createAttributes().build());
-        event.put(ListaEntidades.DIAMOND_SILVERFISH, MineralSilverfish.createAttributes().build());
-        event.put(ListaEntidades.DEEPSLATE_DIAMOND_SILVERFISH, MineralSilverfish.createAttributes().build());
-        event.put(ListaEntidades.EMERALD_SILVERFISH, MineralSilverfish.createAttributes().build());
-        event.put(ListaEntidades.DEEPSLATE_EMERALD_SILVERFISH, MineralSilverfish.createAttributes().build());
-        event.put(ListaEntidades.QUARTZ_SILVERFISH, MineralSilverfish.createAttributes().build());
-        event.put(ListaEntidades.NETHERITE_SILVERFISH, MineralSilverfish.createAttributes().build());
+        event.put(ListaEntidades.COAL_SILVERFISH, MineralSilverfish.createAttributes(Mineral.COAL).build());
+        event.put(ListaEntidades.DEEPSLATE_COAL_SILVERFISH, MineralSilverfish.createAttributes(Mineral.DEEPSLATE_COAL).build());
+        event.put(ListaEntidades.COPPER_SILVERFISH, MineralSilverfish.createAttributes(Mineral.COPPER).build());
+        event.put(ListaEntidades.DEEPSLATE_COPPER_SILVERFISH, MineralSilverfish.createAttributes(Mineral.DEEPSLATE_COPPER).build());
+        event.put(ListaEntidades.LAPIS_SILVERFISH, MineralSilverfish.createAttributes(Mineral.LAPIS).build());
+        event.put(ListaEntidades.DEEPSLATE_LAPIS_SILVERFISH, MineralSilverfish.createAttributes(Mineral.DEEPSLATE_LAPIS).build());
+        event.put(ListaEntidades.IRON_SILVERFISH, MineralSilverfish.createAttributes(Mineral.IRON).build());
+        event.put(ListaEntidades.DEEPSLATE_IRON_SILVERFISH, MineralSilverfish.createAttributes(Mineral.DEEPSLATE_IRON).build());
+        event.put(ListaEntidades.GOLD_SILVERFISH, MineralSilverfish.createAttributes(Mineral.GOLD).build());
+        event.put(ListaEntidades.DEEPSLATE_GOLD_SILVERFISH, MineralSilverfish.createAttributes(Mineral.DEEPSLATE_GOLD).build());
+        event.put(ListaEntidades.NETHER_GOLD_SILVERFISH, MineralSilverfish.createAttributes(Mineral.NETHER_GOLD).build());
+        event.put(ListaEntidades.REDSTONE_SILVERFISH, MineralSilverfish.createAttributes(Mineral.REDSTONE).build());
+        event.put(ListaEntidades.DEEPSLATE_REDSTONE_SILVERFISH, MineralSilverfish.createAttributes(Mineral.DEEPSLATE_REDSTONE).build());
+        event.put(ListaEntidades.DIAMOND_SILVERFISH, MineralSilverfish.createAttributes(Mineral.DIAMOND).build());
+        event.put(ListaEntidades.DEEPSLATE_DIAMOND_SILVERFISH, MineralSilverfish.createAttributes(Mineral.DEEPSLATE_DIAMOND).build());
+        event.put(ListaEntidades.EMERALD_SILVERFISH, MineralSilverfish.createAttributes(Mineral.EMERALD).build());
+        event.put(ListaEntidades.DEEPSLATE_EMERALD_SILVERFISH, MineralSilverfish.createAttributes(Mineral.DEEPSLATE_EMERALD).build());
+        event.put(ListaEntidades.QUARTZ_SILVERFISH, MineralSilverfish.createAttributes(Mineral.QUARTZ).build());
+        event.put(ListaEntidades.NETHERITE_SILVERFISH, MineralSilverfish.createAttributes(Mineral.NETHERITE).build());
     }
 
 	public void enqueueIMC(final InterModEnqueueEvent event){

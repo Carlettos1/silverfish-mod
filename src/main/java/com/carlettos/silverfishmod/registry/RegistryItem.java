@@ -115,5 +115,27 @@ public class RegistryItem {
         reg.getRegistry().register(ListaItems.INFESTED_DEEPSLATE_EMERALD_ORE);
         reg.getRegistry().register(ListaItems.INFESTED_NETHER_QUARTZ_ORE);
         reg.getRegistry().register(ListaItems.INFESTED_ANCIENT_DEBRIS);
+
+        ListaItems.SILVERFISHED_COAL.setRegistryName("silverfished_coal");
+        ListaItems.SILVERFISHED_COPPER.setRegistryName("silverfished_copper");
+        ListaItems.SILVERFISHED_LAPIS.setRegistryName("silverfished_lapis");
+        ListaItems.SILVERFISHED_IRON.setRegistryName("silverfished_iron");
+        ListaItems.SILVERFISHED_GOLD.setRegistryName("silverfished_gold");
+        ListaItems.SILVERFISHED_REDSTONE.setRegistryName("silverfished_redstone");
+        ListaItems.SILVERFISHED_DIAMOND.setRegistryName("silverfished_diamond");
+        ListaItems.SILVERFISHED_EMERALD.setRegistryName("silverfished_emerald");
+        ListaItems.SILVERFISHED_QUARTZ.setRegistryName("silverfished_quartz");
+        ListaItems.SILVERFISHED_NETHERITE.setRegistryName("silverfished_netherite");
+
+        reg.getRegistry().register(ListaItems.SILVERFISHED_COAL);
+        reg.getRegistry().register(ListaItems.SILVERFISHED_COPPER);
+        reg.getRegistry().register(ListaItems.SILVERFISHED_LAPIS);
+        reg.getRegistry().register(ListaItems.SILVERFISHED_IRON);
+        reg.getRegistry().register(ListaItems.SILVERFISHED_GOLD);
+        reg.getRegistry().register(ListaItems.SILVERFISHED_REDSTONE);
+        reg.getRegistry().register(ListaItems.SILVERFISHED_DIAMOND);
+        reg.getRegistry().register(ListaItems.SILVERFISHED_EMERALD);
+        reg.getRegistry().register(ListaItems.SILVERFISHED_QUARTZ);
+        reg.getRegistry().register(ListaItems.SILVERFISHED_NETHERITE);
     }
 }

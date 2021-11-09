@@ -30,7 +30,18 @@ public class SilverfishedOre extends InfestedBlock{
     }
 
     protected void spawnInfestation(ServerLevel serverWorld, BlockPos pos) {
-        Silverfish silverfish = Mineral.getFromBlock(this.bloque).getSilverfishFromMineral().create(serverWorld);
+        Mineral mineral = Mineral.getFromBlock(bloque);
+        switch (mineral.fuerza) {
+        case DEBIL:
+            break;
+        case FUERTE:
+            break;
+        case SUPER_FUERTE:
+            break;
+        default:
+            throw new IllegalArgumentException("Unexpected value: " + Mineral.getFromBlock(bloque));
+        }
+        Silverfish silverfish = Mineral.getFromBlock(this.bloque).getSilverfish().create(serverWorld);
         silverfish.moveTo((double)pos.getX() + 0.5D, (double)pos.getY(), (double)pos.getZ() + 0.5D, 0.0F, 0.0F);
         serverWorld.addFreshEntity(silverfish);
         silverfish.spawnAnim();

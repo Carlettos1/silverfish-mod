@@ -1,6 +1,8 @@
 package com.carlettos.silverfishmod.listas;
 
 import com.carlettos.silverfishmod.item.Detector;
+import com.carlettos.silverfishmod.item.SilverfishedEssence;
+import com.carlettos.silverfishmod.util.Essence;
 import com.carlettos.silverfishmod.util.Util;
 
 import net.minecraft.world.item.BlockItem;
@@ -65,6 +67,18 @@ public class ListaItems {
     public static final Item INFESTED_NETHER_QUARTZ_ORE;
     public static final Item INFESTED_ANCIENT_DEBRIS;
     
+    //SilverfishedEssences
+    public static final Item SILVERFISHED_COAL;
+    public static final Item SILVERFISHED_COPPER;
+    public static final Item SILVERFISHED_LAPIS;
+    public static final Item SILVERFISHED_IRON;
+    public static final Item SILVERFISHED_GOLD;
+    public static final Item SILVERFISHED_REDSTONE;
+    public static final Item SILVERFISHED_DIAMOND;
+    public static final Item SILVERFISHED_EMERALD;
+    public static final Item SILVERFISHED_QUARTZ;
+    public static final Item SILVERFISHED_NETHERITE;
+    
     static {
         DETECTOR = new Detector(new Item.Properties().tab(Util.GRUPO).defaultDurability(1500));
         COAL_BUCKET = new BucketItem(ListaFluidos.COAL, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(Util.GRUPO));
@@ -117,5 +131,16 @@ public class ListaItems {
         INFESTED_DEEPSLATE_EMERALD_ORE = new BlockItem(ListaBloques.INFESTED_DEEPSLATE_EMERALD_ORE, new Item.Properties().tab(Util.GRUPO));
         INFESTED_NETHER_QUARTZ_ORE = new BlockItem(ListaBloques.INFESTED_NETHER_QUARTZ_ORE, new Item.Properties().tab(Util.GRUPO));
         INFESTED_ANCIENT_DEBRIS = new BlockItem(ListaBloques.INFESTED_ANCIENT_DEBRIS, new Item.Properties().tab(Util.GRUPO));
+
+        SILVERFISHED_COAL = new SilverfishedEssence(Essence.COAL);
+        SILVERFISHED_COPPER = new SilverfishedEssence(Essence.COPPER);
+        SILVERFISHED_LAPIS = new SilverfishedEssence(Essence.LAPIS);
+        SILVERFISHED_IRON = new SilverfishedEssence(Essence.IRON);
+        SILVERFISHED_GOLD = new SilverfishedEssence(Essence.GOLD);
+        SILVERFISHED_REDSTONE = new SilverfishedEssence(Essence.REDSTONE);
+        SILVERFISHED_DIAMOND = new SilverfishedEssence(Essence.DIAMOND);
+        SILVERFISHED_EMERALD = new SilverfishedEssence(Essence.EMERALD);
+        SILVERFISHED_QUARTZ = new SilverfishedEssence(Essence.QUARTZ);
+        SILVERFISHED_NETHERITE = new SilverfishedEssence(Essence.NETHERITE);
     }
 }

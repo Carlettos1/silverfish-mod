@@ -1,6 +1,30 @@
 {
   "itemGroup.silverfishmod": "Silverfish mod",
   
+  "item.silverfishmod.detector": "Essence Detector",
+  
+  "item.silverfishmod.coal_bucket": "Coal Essence Bucket",
+  "item.silverfishmod.copper_bucket": "Copper Essence Bucket",
+  "item.silverfishmod.lapis_bucket": "Lapis Essence Bucket",
+  "item.silverfishmod.iron_bucket": "Iron Essence Bucket",
+  "item.silverfishmod.gold_bucket": "Gold Essence Bucket",
+  "item.silverfishmod.redstone_bucket": "Redstone Essence Bucket",
+  "item.silverfishmod.diamond_bucket": "Diamond Essence Bucket",
+  "item.silverfishmod.emerald_bucket": "Emerald Essence Bucket",
+  "item.silverfishmod.quartz_bucket": "Quartz Essence Bucket",
+  "item.silverfishmod.netherite_bucket": "Netherite Essence Bucket",
+  
+  "item.silverfishmod.silverfished_coal": "Silverfished Coal",
+  "item.silverfishmod.silverfished_copper": "Silverfished Copper",
+  "item.silverfishmod.silverfished_lapis": "Silverfished Lapis",
+  "item.silverfishmod.silverfished_iron": "Silverfished Iron",
+  "item.silverfishmod.silverfished_gold": "Silverfished Gold",
+  "item.silverfishmod.silverfished_redstone": "Silverfished Redstone",
+  "item.silverfishmod.silverfished_diamond": "Silverfished Diamond",
+  "item.silverfishmod.silverfished_emerald": "Silverfished Emerald",
+  "item.silverfishmod.silverfished_quartz": "Silverfished Quartz",
+  "item.silverfishmod.silverfished_netherite": "Silverfished Netherite",
+  
   "item.silverfishmod.coal_silverfish_spawn_egg": "Coal Silverfish Spawn Egg",
   "item.silverfishmod.deepslate_coal_silverfish_spawn_egg": "Deepslate Coal Silverfish Spawn Egg",
   "item.silverfishmod.copper_silverfish_spawn_egg": "Copper Silverfish Spawn Egg",
