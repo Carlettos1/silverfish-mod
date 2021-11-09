@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:gold_ore",
+    "minecraft:deepslate_gold_ore",
+    "minecraft:nether_gold_ore",
+    "silverfishmod:infested_gold_ore",
+    "silverfishmod:infested_deepslate_gold_ore",
+    "silverfishmod:infested_nether_gold_ore"
+  ]
+}

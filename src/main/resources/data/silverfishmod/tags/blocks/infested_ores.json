@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "#silverfishmod:infested_ores/infested_coal_ores",
+    "#silverfishmod:infested_ores/infested_copper_ores",
+    "#silverfishmod:infested_ores/infested_diamond_ores",
+    "#silverfishmod:infested_ores/infested_emerald_ores",
+    "#silverfishmod:infested_ores/infested_gold_ores",
+    "#silverfishmod:infested_ores/infested_iron_ores",
+    "#silverfishmod:infested_ores/infested_lapis_ores",
+    "#silverfishmod:infested_ores/infested_netherite_ores",
+    "#silverfishmod:infested_ores/infested_quartz_ores",
+    "#silverfishmod:infested_ores/infested_redstone_ores"
+  ]
+}
