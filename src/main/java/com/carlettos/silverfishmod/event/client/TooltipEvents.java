@@ -1,40 +1,25 @@
-package com.carlettos.silverfishmod.events;
+package com.carlettos.silverfishmod.event.client;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.carlettos.silverfishmod.DetectorTooltip;
-import com.carlettos.silverfishmod.client.handler.HudHandler;
-import com.carlettos.silverfishmod.client.handler.TooltipHelper;
-import com.carlettos.silverfishmod.item.Detector;
+import com.carlettos.silverfishmod.client.helper.TooltipHelper;
+import com.carlettos.silverfishmod.tooltip.test.DetectorTooltip;
 import com.mojang.datafixers.util.Either;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.FormattedText;
 import net.minecraft.world.Container;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.RecipesUpdatedEvent;
 import net.minecraftforge.client.event.RenderTooltipEvent;
-import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber
-public class GuiEvents {
-    @SubscribeEvent
-    public static void onRenderTick(TickEvent.RenderTickEvent event) {
-        if(Minecraft.getInstance().getCameraEntity() instanceof Player) {
-            Player player = (Player) Minecraft.getInstance().getCameraEntity();
-            if(player.getMainHandItem().getItem() instanceof Detector 
-                    || player.getOffhandItem().getItem() instanceof Detector) {
-                HudHandler.renderDetector(player);
-            }
-        }
-    }
+public class TooltipEvents {
     
     @OnlyIn(Dist.CLIENT)
     @SubscribeEvent

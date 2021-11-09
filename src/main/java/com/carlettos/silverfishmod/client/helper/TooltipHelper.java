@@ -1,4 +1,4 @@
-package com.carlettos.silverfishmod.client.handler;
+package com.carlettos.silverfishmod.client.helper;
 
 import java.util.Collection;
 

@@ -2,10 +2,10 @@ package com.carlettos.silverfishmod.item;
 
 import java.util.Optional;
 
-import com.carlettos.silverfishmod.DetectorTooltip;
 import com.carlettos.silverfishmod.essence.EssenceManager;
 import com.carlettos.silverfishmod.essence.connection.EssencePacket;
 import com.carlettos.silverfishmod.server.handler.PacketHandler;
+import com.carlettos.silverfishmod.tooltip.test.DetectorTooltip;
 
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;

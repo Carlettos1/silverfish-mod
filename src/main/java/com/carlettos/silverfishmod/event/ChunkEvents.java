@@ -1,4 +1,4 @@
-package com.carlettos.silverfishmod.events;
+package com.carlettos.silverfishmod.event;
 
 import com.carlettos.silverfishmod.essence.EssenceChunk;
 import com.carlettos.silverfishmod.essence.EssenceManager;

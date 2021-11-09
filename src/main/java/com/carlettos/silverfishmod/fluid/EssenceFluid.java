@@ -20,10 +20,10 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraftforge.fluids.FluidAttributes;
 
-public abstract class MineralFluid extends FlowingFluid{
+public abstract class EssenceFluid extends FlowingFluid{
     public final Essence essence;
     
-    public MineralFluid(Essence essence) {
+    public EssenceFluid(Essence essence) {
         this.essence = essence;
     }
     
@@ -107,7 +107,7 @@ public abstract class MineralFluid extends FlowingFluid{
         return this.getClass().toString() + " : " + essence.name() + ", Source: " + this.isSource(this.defaultFluidState());
     }
     
-    public static final class Flowing extends MineralFluid{
+    public static final class Flowing extends EssenceFluid{
         public Flowing(Essence essence) {
             super(essence);
             registerDefaultState(getStateDefinition().any().setValue(LEVEL, 7));
@@ -130,7 +130,7 @@ public abstract class MineralFluid extends FlowingFluid{
         }
     }
     
-    public static final class Source extends MineralFluid{
+    public static final class Source extends EssenceFluid{
         public Source(Essence essence) {
             super(essence);
         }

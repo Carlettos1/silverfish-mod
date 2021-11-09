@@ -1,4 +1,4 @@
-package com.carlettos.silverfishmod;
+package com.carlettos.silverfishmod.tooltip.test;
 
 import com.carlettos.silverfishmod.util.Util;
 import com.mojang.blaze3d.systems.RenderSystem;

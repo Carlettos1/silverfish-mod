@@ -14,31 +14,31 @@ import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.dimension.DimensionType;
 
 public class EssenceManager {
-    public static ConcurrentHashMap<DimensionType, EssenceWorld> mapas = new ConcurrentHashMap<>();
+    public static ConcurrentHashMap<DimensionType, EssenceWorld> dimensiones = new ConcurrentHashMap<>();
     
     public static EssenceWorld getEssenceWorld(DimensionType dim) {
-        if(!mapas.containsKey(dim)) {
+        if(!dimensiones.containsKey(dim)) {
             createEssenceWorld(dim);
         }
-        return mapas.get(dim);
+        return dimensiones.get(dim);
     }
     
     public static void createEssenceWorld(DimensionType dim) {
-        if(!mapas.containsKey(dim)) {
-            mapas.put(dim, new EssenceWorld());
+        if(!dimensiones.containsKey(dim)) {
+            dimensiones.put(dim, new EssenceWorld());
             Util.log("EssenceWorld created for: " + dim);
         }
     }
     
     public static void removeEssenceWorld(DimensionType dim) {
-        if(mapas.containsKey(dim)) {
-            mapas.remove(dim);
+        if(dimensiones.containsKey(dim)) {
+            dimensiones.remove(dim);
             Util.log("EssenceWorld removed for: " + dim);
         }
     }
     
     public static void removeEssenceChunk(DimensionType dim, ChunkPos pos) {
-        mapas.get(dim).getEssenceChunks().remove(Par.fromChunkPos(pos));
+        dimensiones.get(dim).getEssenceChunks().remove(Par.fromChunkPos(pos));
     }
     
     public static void createEssenceChunk(DimensionType dim, ChunkPos pos, Random rand) {

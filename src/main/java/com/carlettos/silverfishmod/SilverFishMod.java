@@ -8,6 +8,8 @@ import com.carlettos.silverfishmod.listas.ListaEntidades;
 import com.carlettos.silverfishmod.mob.MineralSilverfish;
 import com.carlettos.silverfishmod.mob.MineralSilverfishRenderer;
 import com.carlettos.silverfishmod.server.handler.PacketHandler;
+import com.carlettos.silverfishmod.tooltip.test.DetectorClientTooltip;
+import com.carlettos.silverfishmod.tooltip.test.DetectorTooltip;
 import com.carlettos.silverfishmod.util.Util;
 
 import net.minecraft.client.renderer.entity.EntityRenderers;

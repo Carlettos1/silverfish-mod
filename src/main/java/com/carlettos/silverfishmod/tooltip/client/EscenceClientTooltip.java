@@ -1,4 +1,6 @@
-package com.carlettos.silverfishmod;
+package com.carlettos.silverfishmod.tooltip.client;
+
+import com.carlettos.silverfishmod.tooltip.EscenceTooltip;
 
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;

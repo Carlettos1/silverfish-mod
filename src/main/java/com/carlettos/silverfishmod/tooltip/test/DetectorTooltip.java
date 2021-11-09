@@ -1,4 +1,4 @@
-package com.carlettos.silverfishmod;
+package com.carlettos.silverfishmod.tooltip.test;
 
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 
