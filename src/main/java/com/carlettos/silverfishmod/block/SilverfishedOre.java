@@ -31,6 +31,7 @@ public class SilverfishedOre extends InfestedBlock{
 
     protected void spawnInfestation(ServerLevel serverWorld, BlockPos pos) {
         Mineral mineral = Mineral.getFromBlock(bloque);
+        //TODO: fuerzas
         switch (mineral.fuerza) {
         case DEBIL:
             break;

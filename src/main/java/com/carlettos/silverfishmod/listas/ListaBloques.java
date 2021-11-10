@@ -6,9 +6,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Material;
 
-@SuppressWarnings("deprecation") //TODO: cannot use supplier bcs this.fluid == null in that constructor
 public class ListaBloques {
     public static final Block COAL;
     public static final Block COPPER;
@@ -42,35 +42,44 @@ public class ListaBloques {
     public static final Block INFESTED_ANCIENT_DEBRIS;
     
     static {
-        COAL = new LiquidBlock(ListaFluidos.COAL, BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100).noDrops());
-        COPPER = new LiquidBlock(ListaFluidos.COPPER, BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100).noDrops());
-        LAPIS = new LiquidBlock(ListaFluidos.LAPIS, BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100).noDrops());
-        IRON = new LiquidBlock(ListaFluidos.IRON, BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100).noDrops());
-        GOLD = new LiquidBlock(ListaFluidos.GOLD, BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100).noDrops());
-        REDSTONE = new LiquidBlock(ListaFluidos.REDSTONE, BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100).noDrops());
-        DIAMOND = new LiquidBlock(ListaFluidos.DIAMOND, BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100).noDrops());
-        EMERALD = new LiquidBlock(ListaFluidos.EMERALD, BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100).noDrops());
-        QUARTZ = new LiquidBlock(ListaFluidos.QUARTZ, BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100).noDrops());
-        NETHERITE = new LiquidBlock(ListaFluidos.NETHERITE, BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100).noDrops());
+        COAL = createLiquidBlock(ListaFluidos.COAL);
+        COPPER = createLiquidBlock(ListaFluidos.COPPER);
+        LAPIS = createLiquidBlock(ListaFluidos.LAPIS);
+        IRON = createLiquidBlock(ListaFluidos.IRON);
+        GOLD = createLiquidBlock(ListaFluidos.GOLD);
+        REDSTONE = createLiquidBlock(ListaFluidos.REDSTONE);
+        DIAMOND = createLiquidBlock(ListaFluidos.DIAMOND);
+        EMERALD = createLiquidBlock(ListaFluidos.EMERALD);
+        QUARTZ = createLiquidBlock(ListaFluidos.QUARTZ);
+        NETHERITE = createLiquidBlock(ListaFluidos.NETHERITE);
         
-        INFESTED_COAL_ORE = new SilverfishedOre(Blocks.COAL_ORE, BlockBehaviour.Properties.of(Material.CLAY));
-        INFESTED_DEEPSLATE_COAL_ORE = new SilverfishedOre(Blocks.DEEPSLATE_COAL_ORE, BlockBehaviour.Properties.of(Material.CLAY));
-        INFESTED_COPPER_ORE = new SilverfishedOre(Blocks.COPPER_ORE, BlockBehaviour.Properties.of(Material.CLAY));
-        INFESTED_DEEPSLATE_COPPER_ORE = new SilverfishedOre(Blocks.DEEPSLATE_COPPER_ORE, BlockBehaviour.Properties.of(Material.CLAY));
-        INFESTED_LAPIS_ORE = new SilverfishedOre(Blocks.LAPIS_ORE, BlockBehaviour.Properties.of(Material.CLAY));
-        INFESTED_DEEPSLATE_LAPIS_ORE = new SilverfishedOre(Blocks.DEEPSLATE_LAPIS_ORE, BlockBehaviour.Properties.of(Material.CLAY));
-        INFESTED_IRON_ORE = new SilverfishedOre(Blocks.IRON_ORE, BlockBehaviour.Properties.of(Material.CLAY));
-        INFESTED_DEEPSLATE_IRON_ORE = new SilverfishedOre(Blocks.DEEPSLATE_IRON_ORE, BlockBehaviour.Properties.of(Material.CLAY));
-        INFESTED_GOLD_ORE = new SilverfishedOre(Blocks.GOLD_ORE, BlockBehaviour.Properties.of(Material.CLAY));
-        INFESTED_DEEPSLATE_GOLD_ORE = new SilverfishedOre(Blocks.DEEPSLATE_GOLD_ORE, BlockBehaviour.Properties.of(Material.CLAY));
-        INFESTED_NETHER_GOLD_ORE = new SilverfishedOre(Blocks.NETHER_GOLD_ORE, BlockBehaviour.Properties.of(Material.CLAY));
-        INFESTED_REDSTONE_ORE = new SilverfishedOre(Blocks.REDSTONE_ORE, BlockBehaviour.Properties.of(Material.CLAY));
-        INFESTED_DEEPSLATE_REDSTONE_ORE = new SilverfishedOre(Blocks.DEEPSLATE_REDSTONE_ORE, BlockBehaviour.Properties.of(Material.CLAY));
-        INFESTED_DIAMOND_ORE = new SilverfishedOre(Blocks.DIAMOND_ORE, BlockBehaviour.Properties.of(Material.CLAY));
-        INFESTED_DEEPSLATE_DIAMOND_ORE = new SilverfishedOre(Blocks.DEEPSLATE_DIAMOND_ORE, BlockBehaviour.Properties.of(Material.CLAY));
-        INFESTED_EMERALD_ORE = new SilverfishedOre(Blocks.EMERALD_ORE, BlockBehaviour.Properties.of(Material.CLAY));
-        INFESTED_DEEPSLATE_EMERALD_ORE = new SilverfishedOre(Blocks.DEEPSLATE_EMERALD_ORE, BlockBehaviour.Properties.of(Material.CLAY));
-        INFESTED_NETHER_QUARTZ_ORE = new SilverfishedOre(Blocks.NETHER_QUARTZ_ORE, BlockBehaviour.Properties.of(Material.CLAY));
-        INFESTED_ANCIENT_DEBRIS = new SilverfishedOre(Blocks.ANCIENT_DEBRIS, BlockBehaviour.Properties.of(Material.CLAY));
+        INFESTED_COAL_ORE = createSilverfishedOre(Blocks.COAL_ORE);
+        INFESTED_DEEPSLATE_COAL_ORE = createSilverfishedOre(Blocks.DEEPSLATE_COAL_ORE);
+        INFESTED_COPPER_ORE = createSilverfishedOre(Blocks.COPPER_ORE);
+        INFESTED_DEEPSLATE_COPPER_ORE = createSilverfishedOre(Blocks.DEEPSLATE_COPPER_ORE);
+        INFESTED_LAPIS_ORE = createSilverfishedOre(Blocks.LAPIS_ORE);
+        INFESTED_DEEPSLATE_LAPIS_ORE = createSilverfishedOre(Blocks.DEEPSLATE_LAPIS_ORE);
+        INFESTED_IRON_ORE = createSilverfishedOre(Blocks.IRON_ORE);
+        INFESTED_DEEPSLATE_IRON_ORE = createSilverfishedOre(Blocks.DEEPSLATE_IRON_ORE);
+        INFESTED_GOLD_ORE = createSilverfishedOre(Blocks.GOLD_ORE);
+        INFESTED_DEEPSLATE_GOLD_ORE = createSilverfishedOre(Blocks.DEEPSLATE_GOLD_ORE);
+        INFESTED_NETHER_GOLD_ORE = createSilverfishedOre(Blocks.NETHER_GOLD_ORE);
+        INFESTED_REDSTONE_ORE = createSilverfishedOre(Blocks.REDSTONE_ORE);
+        INFESTED_DEEPSLATE_REDSTONE_ORE = createSilverfishedOre(Blocks.DEEPSLATE_REDSTONE_ORE);
+        INFESTED_DIAMOND_ORE = createSilverfishedOre(Blocks.DIAMOND_ORE);
+        INFESTED_DEEPSLATE_DIAMOND_ORE = createSilverfishedOre(Blocks.DEEPSLATE_DIAMOND_ORE);
+        INFESTED_EMERALD_ORE = createSilverfishedOre(Blocks.EMERALD_ORE);
+        INFESTED_DEEPSLATE_EMERALD_ORE = createSilverfishedOre(Blocks.DEEPSLATE_EMERALD_ORE);
+        INFESTED_NETHER_QUARTZ_ORE = createSilverfishedOre(Blocks.NETHER_QUARTZ_ORE);
+        INFESTED_ANCIENT_DEBRIS = createSilverfishedOre(Blocks.ANCIENT_DEBRIS);
+    }
+    
+    public static final SilverfishedOre createSilverfishedOre(Block block) {
+        return new SilverfishedOre(block, BlockBehaviour.Properties.of(Material.CLAY));
+    }
+
+    @SuppressWarnings("deprecation") //FIXME: cannot use supplier bcs this.fluid == null in that constructor
+    public static final LiquidBlock createLiquidBlock(FlowingFluid fluid) {
+        return new LiquidBlock(fluid, BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100).noDrops());
     }
 }

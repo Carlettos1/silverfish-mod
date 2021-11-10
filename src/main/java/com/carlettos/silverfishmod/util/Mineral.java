@@ -2,7 +2,7 @@ package com.carlettos.silverfishmod.util;
 
 import com.carlettos.silverfishmod.listas.ListaBloques;
 import com.carlettos.silverfishmod.listas.ListaEntidades;
-import com.carlettos.silverfishmod.mob.MineralSilverfish;
+import com.carlettos.silverfishmod.mob.silverfish.MineralSilverfish;
 
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.Block;

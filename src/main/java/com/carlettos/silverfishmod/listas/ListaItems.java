@@ -2,16 +2,19 @@ package com.carlettos.silverfishmod.listas;
 
 import com.carlettos.silverfishmod.item.Detector;
 import com.carlettos.silverfishmod.item.SilverfishedEssence;
+import com.carlettos.silverfishmod.mob.silverfish.MineralSilverfish;
 import com.carlettos.silverfishmod.util.Essence;
 import com.carlettos.silverfishmod.util.Util;
 
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.SpawnEggItem;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.material.FlowingFluid;
 
-@SuppressWarnings("deprecation") //content == null ????? 
 public class ListaItems {
     public static final Item DETECTOR;
     public static final Item COAL_BUCKET;
@@ -81,56 +84,57 @@ public class ListaItems {
     
     static {
         DETECTOR = new Detector(new Item.Properties().tab(Util.GRUPO).defaultDurability(1500));
-        COAL_BUCKET = new BucketItem(ListaFluidos.COAL, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(Util.GRUPO));
-        COPPER_BUCKET = new BucketItem(ListaFluidos.COPPER, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(Util.GRUPO));
-        LAPIS_BUCKET = new BucketItem(ListaFluidos.LAPIS, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(Util.GRUPO));
-        IRON_BUCKET = new BucketItem(ListaFluidos.IRON, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(Util.GRUPO));
-        GOLD_BUCKET = new BucketItem(ListaFluidos.GOLD, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(Util.GRUPO));
-        REDSTONE_BUCKET = new BucketItem(ListaFluidos.REDSTONE, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(Util.GRUPO));
-        DIAMOND_BUCKET = new BucketItem(ListaFluidos.DIAMOND, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(Util.GRUPO));
-        EMERALD_BUCKET = new BucketItem(ListaFluidos.EMERALD, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(Util.GRUPO));
-        QUARTZ_BUCKET = new BucketItem(ListaFluidos.QUARTZ, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(Util.GRUPO));
-        NETHERITE_BUCKET = new BucketItem(ListaFluidos.NETHERITE, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(Util.GRUPO));
         
-        COAL_SILVERFISH_SPAWN_EGG = new SpawnEggItem(ListaEntidades.COAL_SILVERFISH, 0x000000, 0x000000, new Item.Properties().tab(Util.GRUPO));
-        DEEPSLATE_COAL_SILVERFISH_SPAWN_EGG = new SpawnEggItem(ListaEntidades.DEEPSLATE_COAL_SILVERFISH, 0x000000, 0x000000, new Item.Properties().tab(Util.GRUPO));
-        COPPER_SILVERFISH_SPAWN_EGG = new SpawnEggItem(ListaEntidades.COPPER_SILVERFISH, 0x000000, 0x000000, new Item.Properties().tab(Util.GRUPO));
-        DEEPSLATE_COPPER_SILVERFISH_SPAWN_EGG = new SpawnEggItem(ListaEntidades.DEEPSLATE_COPPER_SILVERFISH, 0x000000, 0x000000, new Item.Properties().tab(Util.GRUPO));
-        LAPIS_SILVERFISH_SPAWN_EGG = new SpawnEggItem(ListaEntidades.LAPIS_SILVERFISH, 0x000000, 0x000000, new Item.Properties().tab(Util.GRUPO));
-        DEEPSLATE_LAPIS_SILVERFISH_SPAWN_EGG = new SpawnEggItem(ListaEntidades.DEEPSLATE_LAPIS_SILVERFISH, 0x000000, 0x000000, new Item.Properties().tab(Util.GRUPO));
-        IRON_SILVERFISH_SPAWN_EGG = new SpawnEggItem(ListaEntidades.IRON_SILVERFISH, 0x000000, 0x000000, new Item.Properties().tab(Util.GRUPO));
-        DEEPSLATE_IRON_SILVERFISH_SPAWN_EGG = new SpawnEggItem(ListaEntidades.DEEPSLATE_IRON_SILVERFISH, 0x000000, 0x000000, new Item.Properties().tab(Util.GRUPO));
-        GOLD_SILVERFISH_SPAWN_EGG = new SpawnEggItem(ListaEntidades.GOLD_SILVERFISH, 0x000000, 0x000000, new Item.Properties().tab(Util.GRUPO));
-        DEEPSLATE_GOLD_SILVERFISH_SPAWN_EGG = new SpawnEggItem(ListaEntidades.DEEPSLATE_GOLD_SILVERFISH, 0x000000, 0x000000, new Item.Properties().tab(Util.GRUPO));
-        NETHER_GOLD_SILVERFISH_SPAWN_EGG = new SpawnEggItem(ListaEntidades.NETHER_GOLD_SILVERFISH, 0x000000, 0x000000, new Item.Properties().tab(Util.GRUPO));
-        REDSTONE_SILVERFISH_SPAWN_EGG = new SpawnEggItem(ListaEntidades.REDSTONE_SILVERFISH, 0x000000, 0x000000, new Item.Properties().tab(Util.GRUPO));
-        DEEPSLATE_REDSTONE_SILVERFISH_SPAWN_EGG = new SpawnEggItem(ListaEntidades.DEEPSLATE_REDSTONE_SILVERFISH, 0x000000, 0x000000, new Item.Properties().tab(Util.GRUPO));
-        DIAMOND_SILVERFISH_SPAWN_EGG = new SpawnEggItem(ListaEntidades.DIAMOND_SILVERFISH, 0x000000, 0x000000, new Item.Properties().tab(Util.GRUPO));
-        DEEPSLATE_DIAMOND_SILVERFISH_SPAWN_EGG = new SpawnEggItem(ListaEntidades.DEEPSLATE_DIAMOND_SILVERFISH, 0x000000, 0x000000, new Item.Properties().tab(Util.GRUPO));
-        EMERALD_SILVERFISH_SPAWN_EGG = new SpawnEggItem(ListaEntidades.EMERALD_SILVERFISH, 0x000000, 0x000000, new Item.Properties().tab(Util.GRUPO));
-        DEEPSLATE_EMERALD_SILVERFISH_SPAWN_EGG = new SpawnEggItem(ListaEntidades.DEEPSLATE_EMERALD_SILVERFISH, 0x000000, 0x000000, new Item.Properties().tab(Util.GRUPO));
-        QUARTZ_SILVERFISH_SPAWN_EGG = new SpawnEggItem(ListaEntidades.QUARTZ_SILVERFISH, 0x000000, 0x000000, new Item.Properties().tab(Util.GRUPO));
-        NETHERITE_SILVERFISH_SPAWN_EGG = new SpawnEggItem(ListaEntidades.NETHERITE_SILVERFISH, 0x000000, 0x000000, new Item.Properties().tab(Util.GRUPO));
+        COAL_BUCKET = createBucket(ListaFluidos.COAL);
+        COPPER_BUCKET = createBucket(ListaFluidos.COPPER);
+        LAPIS_BUCKET = createBucket(ListaFluidos.LAPIS);
+        IRON_BUCKET = createBucket(ListaFluidos.IRON);
+        GOLD_BUCKET = createBucket(ListaFluidos.GOLD);
+        REDSTONE_BUCKET = createBucket(ListaFluidos.REDSTONE);
+        DIAMOND_BUCKET = createBucket(ListaFluidos.DIAMOND);
+        EMERALD_BUCKET = createBucket(ListaFluidos.EMERALD);
+        QUARTZ_BUCKET = createBucket(ListaFluidos.QUARTZ);
+        NETHERITE_BUCKET = createBucket(ListaFluidos.NETHERITE);
         
-        INFESTED_COAL_ORE = new BlockItem(ListaBloques.INFESTED_COAL_ORE, new Item.Properties().tab(Util.GRUPO));
-        INFESTED_DEEPSLATE_COAL_ORE = new BlockItem(ListaBloques.INFESTED_DEEPSLATE_COAL_ORE, new Item.Properties().tab(Util.GRUPO));
-        INFESTED_COPPER_ORE = new BlockItem(ListaBloques.INFESTED_COPPER_ORE, new Item.Properties().tab(Util.GRUPO));
-        INFESTED_DEEPSLATE_COPPER_ORE = new BlockItem(ListaBloques.INFESTED_DEEPSLATE_COPPER_ORE, new Item.Properties().tab(Util.GRUPO));
-        INFESTED_LAPIS_ORE = new BlockItem(ListaBloques.INFESTED_LAPIS_ORE, new Item.Properties().tab(Util.GRUPO));
-        INFESTED_DEEPSLATE_LAPIS_ORE = new BlockItem(ListaBloques.INFESTED_DEEPSLATE_LAPIS_ORE, new Item.Properties().tab(Util.GRUPO));
-        INFESTED_IRON_ORE = new BlockItem(ListaBloques.INFESTED_IRON_ORE, new Item.Properties().tab(Util.GRUPO));
-        INFESTED_DEEPSLATE_IRON_ORE = new BlockItem(ListaBloques.INFESTED_DEEPSLATE_IRON_ORE, new Item.Properties().tab(Util.GRUPO));
-        INFESTED_GOLD_ORE = new BlockItem(ListaBloques.INFESTED_GOLD_ORE, new Item.Properties().tab(Util.GRUPO));
-        INFESTED_DEEPSLATE_GOLD_ORE = new BlockItem(ListaBloques.INFESTED_DEEPSLATE_GOLD_ORE, new Item.Properties().tab(Util.GRUPO));
-        INFESTED_NETHER_GOLD_ORE = new BlockItem(ListaBloques.INFESTED_NETHER_GOLD_ORE, new Item.Properties().tab(Util.GRUPO));
-        INFESTED_REDSTONE_ORE = new BlockItem(ListaBloques.INFESTED_REDSTONE_ORE, new Item.Properties().tab(Util.GRUPO));
-        INFESTED_DEEPSLATE_REDSTONE_ORE = new BlockItem(ListaBloques.INFESTED_DEEPSLATE_REDSTONE_ORE, new Item.Properties().tab(Util.GRUPO));
-        INFESTED_DIAMOND_ORE = new BlockItem(ListaBloques.INFESTED_DIAMOND_ORE, new Item.Properties().tab(Util.GRUPO));
-        INFESTED_DEEPSLATE_DIAMOND_ORE = new BlockItem(ListaBloques.INFESTED_DEEPSLATE_DIAMOND_ORE, new Item.Properties().tab(Util.GRUPO));
-        INFESTED_EMERALD_ORE = new BlockItem(ListaBloques.INFESTED_EMERALD_ORE, new Item.Properties().tab(Util.GRUPO));
-        INFESTED_DEEPSLATE_EMERALD_ORE = new BlockItem(ListaBloques.INFESTED_DEEPSLATE_EMERALD_ORE, new Item.Properties().tab(Util.GRUPO));
-        INFESTED_NETHER_QUARTZ_ORE = new BlockItem(ListaBloques.INFESTED_NETHER_QUARTZ_ORE, new Item.Properties().tab(Util.GRUPO));
-        INFESTED_ANCIENT_DEBRIS = new BlockItem(ListaBloques.INFESTED_ANCIENT_DEBRIS, new Item.Properties().tab(Util.GRUPO));
+        COAL_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.COAL_SILVERFISH, 0xa5a5a5, 0x000000);
+        DEEPSLATE_COAL_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.DEEPSLATE_COAL_SILVERFISH, 0x555555, 0x000000);
+        COPPER_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.COPPER_SILVERFISH, 0xa5a5a5, 0xdd5040);
+        DEEPSLATE_COPPER_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.DEEPSLATE_COPPER_SILVERFISH, 0x555555, 0xdd5040);
+        LAPIS_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.LAPIS_SILVERFISH, 0xa5a5a5, 0x0000ff);
+        DEEPSLATE_LAPIS_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.DEEPSLATE_LAPIS_SILVERFISH, 0x555555, 0x0000ff);
+        IRON_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.IRON_SILVERFISH, 0xa5a5a5, 0xe0e0e0);
+        DEEPSLATE_IRON_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.DEEPSLATE_IRON_SILVERFISH, 0x555555, 0xe0e0e0);
+        GOLD_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.GOLD_SILVERFISH, 0xa5a5a5, 0xffff00);
+        DEEPSLATE_GOLD_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.DEEPSLATE_GOLD_SILVERFISH, 0x555555, 0xffff00);
+        NETHER_GOLD_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.NETHER_GOLD_SILVERFISH, 0xd53333, 0xffff00);
+        REDSTONE_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.REDSTONE_SILVERFISH, 0xa5a5a5, 0xff0000);
+        DEEPSLATE_REDSTONE_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.DEEPSLATE_REDSTONE_SILVERFISH, 0x555555, 0xff0000);
+        DIAMOND_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.DIAMOND_SILVERFISH, 0xa5a5a5, 0x00ffff);
+        DEEPSLATE_DIAMOND_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.DEEPSLATE_DIAMOND_SILVERFISH, 0x555555, 0x00ffff);
+        EMERALD_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.EMERALD_SILVERFISH, 0xa5a5a5, 0x00ff00);
+        DEEPSLATE_EMERALD_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.DEEPSLATE_EMERALD_SILVERFISH, 0x555555, 0x00ff00);
+        QUARTZ_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.QUARTZ_SILVERFISH, 0xd53333, 0xf5f5f5);
+        NETHERITE_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.NETHERITE_SILVERFISH, 0xd53333, 0x5D342C);
+        
+        INFESTED_COAL_ORE = createBlockItem(ListaBloques.INFESTED_COAL_ORE);
+        INFESTED_DEEPSLATE_COAL_ORE = createBlockItem(ListaBloques.INFESTED_DEEPSLATE_COAL_ORE);
+        INFESTED_COPPER_ORE = createBlockItem(ListaBloques.INFESTED_COPPER_ORE);
+        INFESTED_DEEPSLATE_COPPER_ORE = createBlockItem(ListaBloques.INFESTED_DEEPSLATE_COPPER_ORE);
+        INFESTED_LAPIS_ORE = createBlockItem(ListaBloques.INFESTED_LAPIS_ORE);
+        INFESTED_DEEPSLATE_LAPIS_ORE = createBlockItem(ListaBloques.INFESTED_DEEPSLATE_LAPIS_ORE);
+        INFESTED_IRON_ORE = createBlockItem(ListaBloques.INFESTED_IRON_ORE);
+        INFESTED_DEEPSLATE_IRON_ORE = createBlockItem(ListaBloques.INFESTED_DEEPSLATE_IRON_ORE);
+        INFESTED_GOLD_ORE = createBlockItem(ListaBloques.INFESTED_GOLD_ORE);
+        INFESTED_DEEPSLATE_GOLD_ORE = createBlockItem(ListaBloques.INFESTED_DEEPSLATE_GOLD_ORE);
+        INFESTED_NETHER_GOLD_ORE = createBlockItem(ListaBloques.INFESTED_NETHER_GOLD_ORE);
+        INFESTED_REDSTONE_ORE = createBlockItem(ListaBloques.INFESTED_REDSTONE_ORE);
+        INFESTED_DEEPSLATE_REDSTONE_ORE = createBlockItem(ListaBloques.INFESTED_DEEPSLATE_REDSTONE_ORE);
+        INFESTED_DIAMOND_ORE = createBlockItem(ListaBloques.INFESTED_DIAMOND_ORE);
+        INFESTED_DEEPSLATE_DIAMOND_ORE = createBlockItem(ListaBloques.INFESTED_DEEPSLATE_DIAMOND_ORE);
+        INFESTED_EMERALD_ORE = createBlockItem(ListaBloques.INFESTED_EMERALD_ORE);
+        INFESTED_DEEPSLATE_EMERALD_ORE = createBlockItem(ListaBloques.INFESTED_DEEPSLATE_EMERALD_ORE);
+        INFESTED_NETHER_QUARTZ_ORE = createBlockItem(ListaBloques.INFESTED_NETHER_QUARTZ_ORE);
+        INFESTED_ANCIENT_DEBRIS = createBlockItem(ListaBloques.INFESTED_ANCIENT_DEBRIS);
 
         SILVERFISHED_COAL = new SilverfishedEssence(Essence.COAL);
         SILVERFISHED_COPPER = new SilverfishedEssence(Essence.COPPER);
@@ -142,5 +146,19 @@ public class ListaItems {
         SILVERFISHED_EMERALD = new SilverfishedEssence(Essence.EMERALD);
         SILVERFISHED_QUARTZ = new SilverfishedEssence(Essence.QUARTZ);
         SILVERFISHED_NETHERITE = new SilverfishedEssence(Essence.NETHERITE);
+    }
+    
+    public static final BlockItem createBlockItem(Block block) {
+        return new BlockItem(block, new Item.Properties().tab(Util.GRUPO));
+    }
+
+    @SuppressWarnings("deprecation") //content == null ????? 
+    public static final SpawnEggItem createSpawnEgg(EntityType<? extends MineralSilverfish> entity, int backgroundColor, int highlightColor) {
+        return new SpawnEggItem(entity, backgroundColor, highlightColor, new Item.Properties().tab(Util.GRUPO));
+    }
+
+    @SuppressWarnings("deprecation") //content == null ????? 
+    public static final BucketItem createBucket(FlowingFluid fluid) {
+        return new BucketItem(fluid, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(Util.GRUPO));
     }
 }

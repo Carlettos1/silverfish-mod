@@ -51,5 +51,45 @@ public class RegistryEntity {
         reg.getRegistry().register(ListaEntidades.DEEPSLATE_EMERALD_SILVERFISH);
         reg.getRegistry().register(ListaEntidades.QUARTZ_SILVERFISH);
         reg.getRegistry().register(ListaEntidades.NETHERITE_SILVERFISH);
+        
+        ListaEntidades.COAL_SILVERFISH_EGG.setRegistryName(Util.getResLoc("coal_silverfish_egg"));
+        ListaEntidades.DEEPSLATE_COAL_SILVERFISH_EGG.setRegistryName(Util.getResLoc("deepslate_coal_silverfish_egg"));
+        ListaEntidades.COPPER_SILVERFISH_EGG.setRegistryName(Util.getResLoc("copper_silverfish_egg"));
+        ListaEntidades.DEEPSLATE_COPPER_SILVERFISH_EGG.setRegistryName(Util.getResLoc("deepslate_copper_silverfish_egg"));
+        ListaEntidades.LAPIS_SILVERFISH_EGG.setRegistryName(Util.getResLoc("lapis_silverfish_egg"));
+        ListaEntidades.DEEPSLATE_LAPIS_SILVERFISH_EGG.setRegistryName(Util.getResLoc("deepslate_lapis_silverfish_egg"));
+        ListaEntidades.IRON_SILVERFISH_EGG.setRegistryName(Util.getResLoc("iron_silverfish_egg"));
+        ListaEntidades.DEEPSLATE_IRON_SILVERFISH_EGG.setRegistryName(Util.getResLoc("deepslate_iron_silverfish_egg"));
+        ListaEntidades.GOLD_SILVERFISH_EGG.setRegistryName(Util.getResLoc("gold_silverfish_egg"));
+        ListaEntidades.DEEPSLATE_GOLD_SILVERFISH_EGG.setRegistryName(Util.getResLoc("deepslate_gold_silverfish_egg"));
+        ListaEntidades.NETHER_GOLD_SILVERFISH_EGG.setRegistryName(Util.getResLoc("nether_gold_silverfish_egg"));
+        ListaEntidades.REDSTONE_SILVERFISH_EGG.setRegistryName(Util.getResLoc("redstone_silverfish_egg"));
+        ListaEntidades.DEEPSLATE_REDSTONE_SILVERFISH_EGG.setRegistryName(Util.getResLoc("deepslate_redstone_silverfish_egg"));
+        ListaEntidades.DIAMOND_SILVERFISH_EGG.setRegistryName(Util.getResLoc("diamond_silverfish_egg"));
+        ListaEntidades.DEEPSLATE_DIAMOND_SILVERFISH_EGG.setRegistryName(Util.getResLoc("deepslate_diamond_silverfish_egg"));
+        ListaEntidades.EMERALD_SILVERFISH_EGG.setRegistryName(Util.getResLoc("emerald_silverfish_egg"));
+        ListaEntidades.DEEPSLATE_EMERALD_SILVERFISH_EGG.setRegistryName(Util.getResLoc("deepslate_emerald_silverfish_egg"));
+        ListaEntidades.QUARTZ_SILVERFISH_EGG.setRegistryName(Util.getResLoc("quartz_silverfish_egg"));
+        ListaEntidades.NETHERITE_SILVERFISH_EGG.setRegistryName(Util.getResLoc("netherite_silverfish_egg"));
+        
+        reg.getRegistry().register(ListaEntidades.COAL_SILVERFISH_EGG);
+        reg.getRegistry().register(ListaEntidades.DEEPSLATE_COAL_SILVERFISH_EGG);
+        reg.getRegistry().register(ListaEntidades.COPPER_SILVERFISH_EGG);
+        reg.getRegistry().register(ListaEntidades.DEEPSLATE_COPPER_SILVERFISH);
+        reg.getRegistry().register(ListaEntidades.LAPIS_SILVERFISH_EGG);
+        reg.getRegistry().register(ListaEntidades.DEEPSLATE_LAPIS_SILVERFISH_EGG);
+        reg.getRegistry().register(ListaEntidades.IRON_SILVERFISH_EGG);
+        reg.getRegistry().register(ListaEntidades.DEEPSLATE_IRON_SILVERFISH_EGG);
+        reg.getRegistry().register(ListaEntidades.GOLD_SILVERFISH_EGG);
+        reg.getRegistry().register(ListaEntidades.DEEPSLATE_GOLD_SILVERFISH_EGG);
+        reg.getRegistry().register(ListaEntidades.NETHER_GOLD_SILVERFISH_EGG);
+        reg.getRegistry().register(ListaEntidades.REDSTONE_SILVERFISH_EGG);
+        reg.getRegistry().register(ListaEntidades.DEEPSLATE_REDSTONE_SILVERFISH_EGG);
+        reg.getRegistry().register(ListaEntidades.DIAMOND_SILVERFISH_EGG);
+        reg.getRegistry().register(ListaEntidades.DEEPSLATE_DIAMOND_SILVERFISH_EGG);
+        reg.getRegistry().register(ListaEntidades.EMERALD_SILVERFISH_EGG);
+        reg.getRegistry().register(ListaEntidades.DEEPSLATE_EMERALD_SILVERFISH_EGG);
+        reg.getRegistry().register(ListaEntidades.QUARTZ_SILVERFISH_EGG);
+        reg.getRegistry().register(ListaEntidades.NETHERITE_SILVERFISH_EGG);
     }
 }

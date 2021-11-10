@@ -1,4 +1,4 @@
-package com.carlettos.silverfishmod.mob;
+package com.carlettos.silverfishmod.mob.silverfish;
 
 import java.util.EnumSet;
 import java.util.List;

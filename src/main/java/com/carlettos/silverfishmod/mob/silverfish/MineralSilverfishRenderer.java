@@ -1,4 +1,4 @@
-package com.carlettos.silverfishmod.mob;
+package com.carlettos.silverfishmod.mob.silverfish;
 
 import com.carlettos.silverfishmod.util.Util;
 
@@ -29,8 +29,9 @@ public class MineralSilverfishRenderer extends MobRenderer<MineralSilverfish, Mi
     private static final ResourceLocation DEEPSLATE_EMERALD_SILVERFISH_TEXTURE = Util.getResLoc("textures/entity/deepslate_emerald_silverfish.png");
     private static final ResourceLocation QUARTZ_SILVERFISH_TEXTURE = Util.getResLoc("textures/entity/quartz_silverfish.png");
     private static final ResourceLocation NETHERITE_EMERALD_SILVERFISH_TEXTURE = Util.getResLoc("textures/entity/netherite_silverfish.png");
+    
     public MineralSilverfishRenderer(EntityRendererProvider.Context context) {
-       super(context, new MineralSilverfishModel(context.bakeLayer(ModelLayers.SILVERFISH)), 0.3F);
+        super(context, new MineralSilverfishModel(context.bakeLayer(ModelLayers.SILVERFISH)), 0.3F);
     }
 
     protected float getFlipDegrees(Silverfish silverfish) {
