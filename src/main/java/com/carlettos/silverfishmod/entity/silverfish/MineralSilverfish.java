@@ -1,4 +1,4 @@
-package com.carlettos.silverfishmod.mob.silverfish;
+package com.carlettos.silverfishmod.entity.silverfish;
 
 import java.util.EnumSet;
 import java.util.List;
@@ -25,6 +25,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.InfestedBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.event.ForgeEventFactory;
 
 public class MineralSilverfish extends Silverfish{
     public final Mineral mineral;
@@ -190,7 +191,7 @@ public class MineralSilverfish extends Silverfish{
                 return false;
             } else {
                 Random random = this.mob.getRandom();
-                if (net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.mob.level, this.mob) && random.nextInt(10) == 0) {
+                if (ForgeEventFactory.getMobGriefingEvent(this.mob.level, this.mob) && random.nextInt(10) == 0) {
                     this.selectedDirection = Direction.getRandom(random);
                     BlockPos blockpos = (new BlockPos(this.mob.getX(), this.mob.getY() + 0.5D, this.mob.getZ())).relative(this.selectedDirection);
                     BlockState blockstate = this.mob.level.getBlockState(blockpos);

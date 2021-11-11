@@ -1,4 +1,4 @@
-package com.carlettos.silverfishmod.mob.silverfish;
+package com.carlettos.silverfishmod.entity.silverfish;
 
 import net.minecraft.client.model.SilverfishModel;
 import net.minecraft.client.model.geom.ModelPart;

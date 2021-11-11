@@ -1,15 +1,15 @@
 package com.carlettos.silverfishmod;
 
 import com.carlettos.silverfishmod.client.handler.HudHandler;
+import com.carlettos.silverfishmod.entity.egg.MineralEgg;
+import com.carlettos.silverfishmod.entity.egg.MineralEggModel;
+import com.carlettos.silverfishmod.entity.egg.MineralEggRenderer;
+import com.carlettos.silverfishmod.entity.silverfish.MineralSilverfish;
+import com.carlettos.silverfishmod.entity.silverfish.MineralSilverfishRenderer;
 import com.carlettos.silverfishmod.essence.EssenceChunk;
 import com.carlettos.silverfishmod.essence.connection.EssencePacket;
 import com.carlettos.silverfishmod.essence.util.EssenceLevel;
 import com.carlettos.silverfishmod.listas.ListaEntidades;
-import com.carlettos.silverfishmod.mob.egg.MineralEgg;
-import com.carlettos.silverfishmod.mob.egg.MineralEggModel;
-import com.carlettos.silverfishmod.mob.egg.MineralEggRenderer;
-import com.carlettos.silverfishmod.mob.silverfish.MineralSilverfish;
-import com.carlettos.silverfishmod.mob.silverfish.MineralSilverfishRenderer;
 import com.carlettos.silverfishmod.server.handler.PacketHandler;
 import com.carlettos.silverfishmod.tooltip.test.DetectorClientTooltip;
 import com.carlettos.silverfishmod.tooltip.test.DetectorTooltip;

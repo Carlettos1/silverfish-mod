@@ -60,7 +60,7 @@ El flujo principal es el siguiente:
 ## Minerales
 Dependiendo de su clasificación spawnean distintas entidades.
 
-1. Débiles: Spawnean entre 2 a 4 huevos, no silverfish. %1
+1. Débiles: Spawnean entre 4 huevos, no silverfish. %1
 2. Fuertes: Spawnean entre 4 huevos y 1 silverfish. %1
 3. Super Fuertes: Spawnean 8 huevos y 2 silverfishes. %1
 

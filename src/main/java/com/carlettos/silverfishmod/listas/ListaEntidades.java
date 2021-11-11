@@ -1,7 +1,7 @@
 package com.carlettos.silverfishmod.listas;
 
-import com.carlettos.silverfishmod.mob.egg.MineralEgg;
-import com.carlettos.silverfishmod.mob.silverfish.MineralSilverfish;
+import com.carlettos.silverfishmod.entity.egg.MineralEgg;
+import com.carlettos.silverfishmod.entity.silverfish.MineralSilverfish;
 import com.carlettos.silverfishmod.util.Mineral;
 import com.carlettos.silverfishmod.util.Util;
 
@@ -71,7 +71,6 @@ public class ListaEntidades {
         QUARTZ_SILVERFISH = createMineralSilverfish(Mineral.QUARTZ);
         NETHERITE_SILVERFISH = createMineralSilverfish(Mineral.NETHERITE);
 
-        //TODO: hacer modelos y renderers, además de todas las cosas
         //Eggs
         COAL_SILVERFISH_EGG = createMineralEgg(Mineral.COAL);
         DEEPSLATE_COAL_SILVERFISH_EGG = createMineralEgg(Mineral.DEEPSLATE_COAL);

@@ -1,4 +1,4 @@
-package com.carlettos.silverfishmod.mob.egg;
+package com.carlettos.silverfishmod.entity.egg;
 
 import com.carlettos.silverfishmod.util.Util;
 
@@ -29,7 +29,7 @@ public class MineralEggRenderer extends MobRenderer<MineralEgg, MineralEggModel>
     private static final ResourceLocation NETHERITE_EMERALD_SILVERFISH_EGG_TEXTURE = Util.getResLoc("textures/entity/netherite_silverfish_egg.png");
 
     public MineralEggRenderer(Context context) {
-        super(context, new MineralEggModel(context.bakeLayer(MineralEggModel.LAYER_LOCATION)), 0.3F);
+        super(context, new MineralEggModel(context.bakeLayer(MineralEggModel.LAYER_LOCATION)), 0.2F);
     }
 
     @Override

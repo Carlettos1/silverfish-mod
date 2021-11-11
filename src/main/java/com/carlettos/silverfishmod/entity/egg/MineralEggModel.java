@@ -1,4 +1,4 @@
-package com.carlettos.silverfishmod.mob.egg;
+package com.carlettos.silverfishmod.entity.egg;
 
 import com.carlettos.silverfishmod.util.Util;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -30,13 +30,12 @@ public class MineralEggModel extends EntityModel<MineralEgg> {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
 
-        partdefinition.addOrReplaceChild("main", CubeListBuilder.create().texOffs(4, 3).addBox(-1.0F, -1.0F, -1.0F, 2.0F, 1.0F, 2.0F, new CubeDeformation(0.0F))
-        .texOffs(15, 25).addBox(-1.5F, -1.5F, -1.5F, 3.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-        .texOffs(18, 35).addBox(-1.5F, -2.0F, -1.5F, 3.0F, 1.0F, 3.0F, new CubeDeformation(0.0F))
-        .texOffs(54, 2).addBox(-1.0F, -3.0F, -1.0F, 2.0F, 1.0F, 2.0F, new CubeDeformation(0.0F))
-        .texOffs(58, 24).addBox(-0.5F, -4.0F, -0.5F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
+        partdefinition.addOrReplaceChild("main", CubeListBuilder.create().texOffs(11, 19).addBox(-1.0F, -1.0F, -1.0F, 2.0F, 1.0F, 2.0F, new CubeDeformation(0.0F))
+                .texOffs(9, 14).addBox(-1.5F, -2.5F, -1.5F, 3.0F, 2.0F, 3.0F, new CubeDeformation(0.0F))
+                .texOffs(11, 11).addBox(-1.0F, -3.5F, -1.0F, 2.0F, 1.0F, 2.0F, new CubeDeformation(0.0F))
+                .texOffs(13, 9).addBox(-0.5F, -4.25F, -0.5F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
 
-        return LayerDefinition.create(meshdefinition, 64, 64);
+                return LayerDefinition.create(meshdefinition, 32, 32);
     }
 
     @Override
@@ -48,5 +47,4 @@ public class MineralEggModel extends EntityModel<MineralEgg> {
     public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
         main.render(poseStack, buffer, packedLight, packedOverlay);
     }
-
 }

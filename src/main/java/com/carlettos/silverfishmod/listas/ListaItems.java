@@ -1,8 +1,10 @@
 package com.carlettos.silverfishmod.listas;
 
+import com.carlettos.silverfishmod.entity.egg.MineralEgg;
+import com.carlettos.silverfishmod.entity.silverfish.MineralSilverfish;
 import com.carlettos.silverfishmod.item.Detector;
+import com.carlettos.silverfishmod.item.SilverfishAwakener;
 import com.carlettos.silverfishmod.item.SilverfishedEssence;
-import com.carlettos.silverfishmod.mob.silverfish.MineralSilverfish;
 import com.carlettos.silverfishmod.util.Essence;
 import com.carlettos.silverfishmod.util.Util;
 
@@ -17,6 +19,7 @@ import net.minecraft.world.level.material.FlowingFluid;
 
 public class ListaItems {
     public static final Item DETECTOR;
+    public static final Item SILVERFISH_AWAKENER;
     public static final Item COAL_BUCKET;
     public static final Item COPPER_BUCKET;
     public static final Item LAPIS_BUCKET;
@@ -28,7 +31,7 @@ public class ListaItems {
     public static final Item QUARTZ_BUCKET;
     public static final Item NETHERITE_BUCKET;
     
-    //Spawn eggs
+    //Spawn eggs silvefishs
     public static final Item COAL_SILVERFISH_SPAWN_EGG;
     public static final Item DEEPSLATE_COAL_SILVERFISH_SPAWN_EGG;
     public static final Item COPPER_SILVERFISH_SPAWN_EGG;
@@ -48,6 +51,27 @@ public class ListaItems {
     public static final Item DEEPSLATE_EMERALD_SILVERFISH_SPAWN_EGG;
     public static final Item QUARTZ_SILVERFISH_SPAWN_EGG;
     public static final Item NETHERITE_SILVERFISH_SPAWN_EGG;
+    
+    //Spawn eggs eggs
+    public static final Item COAL_SILVERFISH_EGG_SPAWN_EGG;
+    public static final Item DEEPSLATE_COAL_SILVERFISH_EGG_SPAWN_EGG;
+    public static final Item COPPER_SILVERFISH_EGG_SPAWN_EGG;
+    public static final Item DEEPSLATE_COPPER_SILVERFISH_EGG_SPAWN_EGG;
+    public static final Item LAPIS_SILVERFISH_EGG_SPAWN_EGG;
+    public static final Item DEEPSLATE_LAPIS_SILVERFISH_EGG_SPAWN_EGG;
+    public static final Item IRON_SILVERFISH_EGG_SPAWN_EGG;
+    public static final Item DEEPSLATE_IRON_SILVERFISH_EGG_SPAWN_EGG;
+    public static final Item GOLD_SILVERFISH_EGG_SPAWN_EGG;
+    public static final Item DEEPSLATE_GOLD_SILVERFISH_EGG_SPAWN_EGG;
+    public static final Item NETHER_GOLD_SILVERFISH_EGG_SPAWN_EGG;
+    public static final Item REDSTONE_SILVERFISH_EGG_SPAWN_EGG;
+    public static final Item DEEPSLATE_REDSTONE_SILVERFISH_EGG_SPAWN_EGG;
+    public static final Item DIAMOND_SILVERFISH_EGG_SPAWN_EGG;
+    public static final Item DEEPSLATE_DIAMOND_SILVERFISH_EGG_SPAWN_EGG;
+    public static final Item EMERALD_SILVERFISH_EGG_SPAWN_EGG;
+    public static final Item DEEPSLATE_EMERALD_SILVERFISH_EGG_SPAWN_EGG;
+    public static final Item QUARTZ_SILVERFISH_EGG_SPAWN_EGG;
+    public static final Item NETHERITE_SILVERFISH_EGG_SPAWN_EGG;
     
     //Ores
     public static final Item INFESTED_COAL_ORE;
@@ -84,6 +108,7 @@ public class ListaItems {
     
     static {
         DETECTOR = new Detector(new Item.Properties().tab(Util.GRUPO).defaultDurability(1500));
+        SILVERFISH_AWAKENER = new SilverfishAwakener();
         
         COAL_BUCKET = createBucket(ListaFluidos.COAL);
         COPPER_BUCKET = createBucket(ListaFluidos.COPPER);
@@ -96,25 +121,45 @@ public class ListaItems {
         QUARTZ_BUCKET = createBucket(ListaFluidos.QUARTZ);
         NETHERITE_BUCKET = createBucket(ListaFluidos.NETHERITE);
         
-        COAL_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.COAL_SILVERFISH, 0xa5a5a5, 0x000000);
-        DEEPSLATE_COAL_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.DEEPSLATE_COAL_SILVERFISH, 0x555555, 0x000000);
-        COPPER_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.COPPER_SILVERFISH, 0xa5a5a5, 0xdd5040);
-        DEEPSLATE_COPPER_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.DEEPSLATE_COPPER_SILVERFISH, 0x555555, 0xdd5040);
-        LAPIS_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.LAPIS_SILVERFISH, 0xa5a5a5, 0x0000ff);
-        DEEPSLATE_LAPIS_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.DEEPSLATE_LAPIS_SILVERFISH, 0x555555, 0x0000ff);
-        IRON_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.IRON_SILVERFISH, 0xa5a5a5, 0xe0e0e0);
-        DEEPSLATE_IRON_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.DEEPSLATE_IRON_SILVERFISH, 0x555555, 0xe0e0e0);
-        GOLD_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.GOLD_SILVERFISH, 0xa5a5a5, 0xffff00);
-        DEEPSLATE_GOLD_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.DEEPSLATE_GOLD_SILVERFISH, 0x555555, 0xffff00);
-        NETHER_GOLD_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.NETHER_GOLD_SILVERFISH, 0xd53333, 0xffff00);
-        REDSTONE_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.REDSTONE_SILVERFISH, 0xa5a5a5, 0xff0000);
-        DEEPSLATE_REDSTONE_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.DEEPSLATE_REDSTONE_SILVERFISH, 0x555555, 0xff0000);
-        DIAMOND_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.DIAMOND_SILVERFISH, 0xa5a5a5, 0x00ffff);
-        DEEPSLATE_DIAMOND_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.DEEPSLATE_DIAMOND_SILVERFISH, 0x555555, 0x00ffff);
-        EMERALD_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.EMERALD_SILVERFISH, 0xa5a5a5, 0x00ff00);
-        DEEPSLATE_EMERALD_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.DEEPSLATE_EMERALD_SILVERFISH, 0x555555, 0x00ff00);
-        QUARTZ_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.QUARTZ_SILVERFISH, 0xd53333, 0xf5f5f5);
-        NETHERITE_SILVERFISH_SPAWN_EGG = createSpawnEgg(ListaEntidades.NETHERITE_SILVERFISH, 0xd53333, 0x5D342C);
+        COAL_SILVERFISH_SPAWN_EGG = createSilverfishSpawnEgg(ListaEntidades.COAL_SILVERFISH, 0xa5a5a5, 0x000000);
+        DEEPSLATE_COAL_SILVERFISH_SPAWN_EGG = createSilverfishSpawnEgg(ListaEntidades.DEEPSLATE_COAL_SILVERFISH, 0x555555, 0x000000);
+        COPPER_SILVERFISH_SPAWN_EGG = createSilverfishSpawnEgg(ListaEntidades.COPPER_SILVERFISH, 0xa5a5a5, 0xdd5040);
+        DEEPSLATE_COPPER_SILVERFISH_SPAWN_EGG = createSilverfishSpawnEgg(ListaEntidades.DEEPSLATE_COPPER_SILVERFISH, 0x555555, 0xdd5040);
+        LAPIS_SILVERFISH_SPAWN_EGG = createSilverfishSpawnEgg(ListaEntidades.LAPIS_SILVERFISH, 0xa5a5a5, 0x0000ff);
+        DEEPSLATE_LAPIS_SILVERFISH_SPAWN_EGG = createSilverfishSpawnEgg(ListaEntidades.DEEPSLATE_LAPIS_SILVERFISH, 0x555555, 0x0000ff);
+        IRON_SILVERFISH_SPAWN_EGG = createSilverfishSpawnEgg(ListaEntidades.IRON_SILVERFISH, 0xa5a5a5, 0xe0e0e0);
+        DEEPSLATE_IRON_SILVERFISH_SPAWN_EGG = createSilverfishSpawnEgg(ListaEntidades.DEEPSLATE_IRON_SILVERFISH, 0x555555, 0xe0e0e0);
+        GOLD_SILVERFISH_SPAWN_EGG = createSilverfishSpawnEgg(ListaEntidades.GOLD_SILVERFISH, 0xa5a5a5, 0xffff00);
+        DEEPSLATE_GOLD_SILVERFISH_SPAWN_EGG = createSilverfishSpawnEgg(ListaEntidades.DEEPSLATE_GOLD_SILVERFISH, 0x555555, 0xffff00);
+        NETHER_GOLD_SILVERFISH_SPAWN_EGG = createSilverfishSpawnEgg(ListaEntidades.NETHER_GOLD_SILVERFISH, 0xd53333, 0xffff00);
+        REDSTONE_SILVERFISH_SPAWN_EGG = createSilverfishSpawnEgg(ListaEntidades.REDSTONE_SILVERFISH, 0xa5a5a5, 0xff0000);
+        DEEPSLATE_REDSTONE_SILVERFISH_SPAWN_EGG = createSilverfishSpawnEgg(ListaEntidades.DEEPSLATE_REDSTONE_SILVERFISH, 0x555555, 0xff0000);
+        DIAMOND_SILVERFISH_SPAWN_EGG = createSilverfishSpawnEgg(ListaEntidades.DIAMOND_SILVERFISH, 0xa5a5a5, 0x00ffff);
+        DEEPSLATE_DIAMOND_SILVERFISH_SPAWN_EGG = createSilverfishSpawnEgg(ListaEntidades.DEEPSLATE_DIAMOND_SILVERFISH, 0x555555, 0x00ffff);
+        EMERALD_SILVERFISH_SPAWN_EGG = createSilverfishSpawnEgg(ListaEntidades.EMERALD_SILVERFISH, 0xa5a5a5, 0x00ff00);
+        DEEPSLATE_EMERALD_SILVERFISH_SPAWN_EGG = createSilverfishSpawnEgg(ListaEntidades.DEEPSLATE_EMERALD_SILVERFISH, 0x555555, 0x00ff00);
+        QUARTZ_SILVERFISH_SPAWN_EGG = createSilverfishSpawnEgg(ListaEntidades.QUARTZ_SILVERFISH, 0xd53333, 0xf5f5f5);
+        NETHERITE_SILVERFISH_SPAWN_EGG = createSilverfishSpawnEgg(ListaEntidades.NETHERITE_SILVERFISH, 0xd53333, 0x5D342C);
+        
+        COAL_SILVERFISH_EGG_SPAWN_EGG = createEggSpawnEgg(ListaEntidades.COAL_SILVERFISH_EGG, 0xa5a5a5, 0x000000);
+        DEEPSLATE_COAL_SILVERFISH_EGG_SPAWN_EGG = createEggSpawnEgg(ListaEntidades.DEEPSLATE_COAL_SILVERFISH_EGG, 0x555555, 0x000000);
+        COPPER_SILVERFISH_EGG_SPAWN_EGG = createEggSpawnEgg(ListaEntidades.COPPER_SILVERFISH_EGG, 0xa5a5a5, 0xdd5040);
+        DEEPSLATE_COPPER_SILVERFISH_EGG_SPAWN_EGG = createEggSpawnEgg(ListaEntidades.DEEPSLATE_COPPER_SILVERFISH_EGG, 0x555555, 0xdd5040);
+        LAPIS_SILVERFISH_EGG_SPAWN_EGG = createEggSpawnEgg(ListaEntidades.LAPIS_SILVERFISH_EGG, 0xa5a5a5, 0x0000ff);
+        DEEPSLATE_LAPIS_SILVERFISH_EGG_SPAWN_EGG = createEggSpawnEgg(ListaEntidades.DEEPSLATE_LAPIS_SILVERFISH_EGG, 0x555555, 0x0000ff);
+        IRON_SILVERFISH_EGG_SPAWN_EGG = createEggSpawnEgg(ListaEntidades.IRON_SILVERFISH_EGG, 0xa5a5a5, 0xe0e0e0);
+        DEEPSLATE_IRON_SILVERFISH_EGG_SPAWN_EGG = createEggSpawnEgg(ListaEntidades.DEEPSLATE_IRON_SILVERFISH_EGG, 0x555555, 0xe0e0e0);
+        GOLD_SILVERFISH_EGG_SPAWN_EGG = createEggSpawnEgg(ListaEntidades.GOLD_SILVERFISH_EGG, 0xa5a5a5, 0xffff00);
+        DEEPSLATE_GOLD_SILVERFISH_EGG_SPAWN_EGG = createEggSpawnEgg(ListaEntidades.DEEPSLATE_GOLD_SILVERFISH_EGG, 0x555555, 0xffff00);
+        NETHER_GOLD_SILVERFISH_EGG_SPAWN_EGG = createEggSpawnEgg(ListaEntidades.NETHER_GOLD_SILVERFISH_EGG, 0xd53333, 0xffff00);
+        REDSTONE_SILVERFISH_EGG_SPAWN_EGG = createEggSpawnEgg(ListaEntidades.REDSTONE_SILVERFISH_EGG, 0xa5a5a5, 0xff0000);
+        DEEPSLATE_REDSTONE_SILVERFISH_EGG_SPAWN_EGG = createEggSpawnEgg(ListaEntidades.DEEPSLATE_REDSTONE_SILVERFISH_EGG, 0x555555, 0xff0000);
+        DIAMOND_SILVERFISH_EGG_SPAWN_EGG = createEggSpawnEgg(ListaEntidades.DIAMOND_SILVERFISH_EGG, 0xa5a5a5, 0x00ffff);
+        DEEPSLATE_DIAMOND_SILVERFISH_EGG_SPAWN_EGG = createEggSpawnEgg(ListaEntidades.DEEPSLATE_DIAMOND_SILVERFISH_EGG, 0x555555, 0x00ffff);
+        EMERALD_SILVERFISH_EGG_SPAWN_EGG = createEggSpawnEgg(ListaEntidades.EMERALD_SILVERFISH_EGG, 0xa5a5a5, 0x00ff00);
+        DEEPSLATE_EMERALD_SILVERFISH_EGG_SPAWN_EGG = createEggSpawnEgg(ListaEntidades.DEEPSLATE_EMERALD_SILVERFISH_EGG, 0x555555, 0x00ff00);
+        QUARTZ_SILVERFISH_EGG_SPAWN_EGG = createEggSpawnEgg(ListaEntidades.QUARTZ_SILVERFISH_EGG, 0xd53333, 0xf5f5f5);
+        NETHERITE_SILVERFISH_EGG_SPAWN_EGG = createEggSpawnEgg(ListaEntidades.NETHERITE_SILVERFISH_EGG, 0xd53333, 0x5D342C);
         
         INFESTED_COAL_ORE = createBlockItem(ListaBloques.INFESTED_COAL_ORE);
         INFESTED_DEEPSLATE_COAL_ORE = createBlockItem(ListaBloques.INFESTED_DEEPSLATE_COAL_ORE);
@@ -153,7 +198,12 @@ public class ListaItems {
     }
 
     @SuppressWarnings("deprecation") //content == null ????? 
-    public static final SpawnEggItem createSpawnEgg(EntityType<? extends MineralSilverfish> entity, int backgroundColor, int highlightColor) {
+    public static final SpawnEggItem createEggSpawnEgg(EntityType<? extends MineralEgg> entity, int backgroundColor, int highlightColor) {
+        return new SpawnEggItem(entity, backgroundColor, highlightColor, new Item.Properties().tab(Util.GRUPO));
+    }
+
+    @SuppressWarnings("deprecation") //content == null ????? 
+    public static final SpawnEggItem createSilverfishSpawnEgg(EntityType<? extends MineralSilverfish> entity, int backgroundColor, int highlightColor) {
         return new SpawnEggItem(entity, backgroundColor, highlightColor, new Item.Properties().tab(Util.GRUPO));
     }
 

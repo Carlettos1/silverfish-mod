@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "silverfishmod:item/egg_spawn_egg",
+        "layer1": "silverfishmod:item/egg_spawn_egg_overlay"
+    }
+}

@@ -13,6 +13,7 @@ public class RegistryItem {
     @SubscribeEvent
     public static void registerItems(final RegistryEvent.Register<Item> reg) {
         ListaItems.DETECTOR.setRegistryName(Util.getResLoc("detector"));
+        ListaItems.SILVERFISH_AWAKENER.setRegistryName(Util.getResLoc("silverfish_awakener"));
         ListaItems.COAL_BUCKET.setRegistryName(Util.getResLoc("coal_bucket"));
         ListaItems.COPPER_BUCKET.setRegistryName(Util.getResLoc("copper_bucket"));
         ListaItems.LAPIS_BUCKET.setRegistryName(Util.getResLoc("lapis_bucket"));
@@ -23,6 +24,19 @@ public class RegistryItem {
         ListaItems.EMERALD_BUCKET.setRegistryName(Util.getResLoc("emerald_bucket"));
         ListaItems.QUARTZ_BUCKET.setRegistryName(Util.getResLoc("quartz_bucket"));
         ListaItems.NETHERITE_BUCKET.setRegistryName(Util.getResLoc("netherite_bucket"));
+
+        reg.getRegistry().register(ListaItems.DETECTOR);
+        reg.getRegistry().register(ListaItems.SILVERFISH_AWAKENER);
+        reg.getRegistry().register(ListaItems.COAL_BUCKET);
+        reg.getRegistry().register(ListaItems.COPPER_BUCKET);
+        reg.getRegistry().register(ListaItems.LAPIS_BUCKET);
+        reg.getRegistry().register(ListaItems.IRON_BUCKET);
+        reg.getRegistry().register(ListaItems.GOLD_BUCKET);
+        reg.getRegistry().register(ListaItems.REDSTONE_BUCKET);
+        reg.getRegistry().register(ListaItems.DIAMOND_BUCKET);
+        reg.getRegistry().register(ListaItems.EMERALD_BUCKET);
+        reg.getRegistry().register(ListaItems.QUARTZ_BUCKET);
+        reg.getRegistry().register(ListaItems.NETHERITE_BUCKET);
         
         ListaItems.COAL_SILVERFISH_SPAWN_EGG.setRegistryName(Util.getResLoc("coal_silverfish_spawn_egg"));
         ListaItems.DEEPSLATE_COAL_SILVERFISH_SPAWN_EGG.setRegistryName(Util.getResLoc("deepslate_coal_silverfish_spawn_egg"));
@@ -44,18 +58,6 @@ public class RegistryItem {
         ListaItems.QUARTZ_SILVERFISH_SPAWN_EGG.setRegistryName(Util.getResLoc("quartz_silverfish_spawn_egg"));
         ListaItems.NETHERITE_SILVERFISH_SPAWN_EGG.setRegistryName(Util.getResLoc("netherite_silverfish_spawn_egg"));
         
-        reg.getRegistry().register(ListaItems.DETECTOR);
-        reg.getRegistry().register(ListaItems.COAL_BUCKET);
-        reg.getRegistry().register(ListaItems.COPPER_BUCKET);
-        reg.getRegistry().register(ListaItems.LAPIS_BUCKET);
-        reg.getRegistry().register(ListaItems.IRON_BUCKET);
-        reg.getRegistry().register(ListaItems.GOLD_BUCKET);
-        reg.getRegistry().register(ListaItems.REDSTONE_BUCKET);
-        reg.getRegistry().register(ListaItems.DIAMOND_BUCKET);
-        reg.getRegistry().register(ListaItems.EMERALD_BUCKET);
-        reg.getRegistry().register(ListaItems.QUARTZ_BUCKET);
-        reg.getRegistry().register(ListaItems.NETHERITE_BUCKET);
-        
         reg.getRegistry().register(ListaItems.COAL_SILVERFISH_SPAWN_EGG);
         reg.getRegistry().register(ListaItems.DEEPSLATE_COAL_SILVERFISH_SPAWN_EGG);
         reg.getRegistry().register(ListaItems.COPPER_SILVERFISH_SPAWN_EGG);
@@ -75,6 +77,46 @@ public class RegistryItem {
         reg.getRegistry().register(ListaItems.DEEPSLATE_EMERALD_SILVERFISH_SPAWN_EGG);
         reg.getRegistry().register(ListaItems.QUARTZ_SILVERFISH_SPAWN_EGG);
         reg.getRegistry().register(ListaItems.NETHERITE_SILVERFISH_SPAWN_EGG);
+        
+        ListaItems.COAL_SILVERFISH_EGG_SPAWN_EGG.setRegistryName(Util.getResLoc("coal_silverfish_egg_spawn_egg"));
+        ListaItems.DEEPSLATE_COAL_SILVERFISH_EGG_SPAWN_EGG.setRegistryName(Util.getResLoc("deepslate_coal_silverfish_egg_spawn_egg"));
+        ListaItems.COPPER_SILVERFISH_EGG_SPAWN_EGG.setRegistryName(Util.getResLoc("copper_silverfish_egg_spawn_egg"));
+        ListaItems.DEEPSLATE_COPPER_SILVERFISH_EGG_SPAWN_EGG.setRegistryName(Util.getResLoc("deepslate_copper_silverfish_egg_spawn_egg"));
+        ListaItems.LAPIS_SILVERFISH_EGG_SPAWN_EGG.setRegistryName(Util.getResLoc("lapis_silverfish_egg_spawn_egg"));
+        ListaItems.DEEPSLATE_LAPIS_SILVERFISH_EGG_SPAWN_EGG.setRegistryName(Util.getResLoc("deepslate_lapis_silverfish_egg_spawn_egg"));
+        ListaItems.IRON_SILVERFISH_EGG_SPAWN_EGG.setRegistryName(Util.getResLoc("iron_silverfish_egg_spawn_egg"));
+        ListaItems.DEEPSLATE_IRON_SILVERFISH_EGG_SPAWN_EGG.setRegistryName(Util.getResLoc("deepslate_iron_silverfish_egg_spawn_egg"));
+        ListaItems.GOLD_SILVERFISH_EGG_SPAWN_EGG.setRegistryName(Util.getResLoc("gold_silverfish_egg_spawn_egg"));
+        ListaItems.DEEPSLATE_GOLD_SILVERFISH_EGG_SPAWN_EGG.setRegistryName(Util.getResLoc("deepslate_gold_silverfish_egg_spawn_egg"));
+        ListaItems.NETHER_GOLD_SILVERFISH_EGG_SPAWN_EGG.setRegistryName(Util.getResLoc("nether_gold_silverfish_egg_spawn_egg"));
+        ListaItems.REDSTONE_SILVERFISH_EGG_SPAWN_EGG.setRegistryName(Util.getResLoc("redstone_silverfish_egg_spawn_egg"));
+        ListaItems.DEEPSLATE_REDSTONE_SILVERFISH_EGG_SPAWN_EGG.setRegistryName(Util.getResLoc("deepslate_redstone_silverfish_egg_spawn_egg"));
+        ListaItems.DIAMOND_SILVERFISH_EGG_SPAWN_EGG.setRegistryName(Util.getResLoc("diamond_silverfish_egg_spawn_egg"));
+        ListaItems.DEEPSLATE_DIAMOND_SILVERFISH_EGG_SPAWN_EGG.setRegistryName(Util.getResLoc("deepslate_diamond_silverfish_egg_spawn_egg"));
+        ListaItems.EMERALD_SILVERFISH_EGG_SPAWN_EGG.setRegistryName(Util.getResLoc("emerald_silverfish_egg_spawn_egg"));
+        ListaItems.DEEPSLATE_EMERALD_SILVERFISH_EGG_SPAWN_EGG.setRegistryName(Util.getResLoc("deepslate_emerald_silverfish_egg_spawn_egg"));
+        ListaItems.QUARTZ_SILVERFISH_EGG_SPAWN_EGG.setRegistryName(Util.getResLoc("quartz_silverfish_egg_spawn_egg"));
+        ListaItems.NETHERITE_SILVERFISH_EGG_SPAWN_EGG.setRegistryName(Util.getResLoc("netherite_silverfish_egg_spawn_egg"));
+        
+        reg.getRegistry().register(ListaItems.COAL_SILVERFISH_EGG_SPAWN_EGG);
+        reg.getRegistry().register(ListaItems.DEEPSLATE_COAL_SILVERFISH_EGG_SPAWN_EGG);
+        reg.getRegistry().register(ListaItems.COPPER_SILVERFISH_EGG_SPAWN_EGG);
+        reg.getRegistry().register(ListaItems.DEEPSLATE_COPPER_SILVERFISH_EGG_SPAWN_EGG);
+        reg.getRegistry().register(ListaItems.LAPIS_SILVERFISH_EGG_SPAWN_EGG);
+        reg.getRegistry().register(ListaItems.DEEPSLATE_LAPIS_SILVERFISH_EGG_SPAWN_EGG);
+        reg.getRegistry().register(ListaItems.IRON_SILVERFISH_EGG_SPAWN_EGG);
+        reg.getRegistry().register(ListaItems.DEEPSLATE_IRON_SILVERFISH_EGG_SPAWN_EGG);
+        reg.getRegistry().register(ListaItems.GOLD_SILVERFISH_EGG_SPAWN_EGG);
+        reg.getRegistry().register(ListaItems.DEEPSLATE_GOLD_SILVERFISH_EGG_SPAWN_EGG);
+        reg.getRegistry().register(ListaItems.NETHER_GOLD_SILVERFISH_EGG_SPAWN_EGG);
+        reg.getRegistry().register(ListaItems.REDSTONE_SILVERFISH_EGG_SPAWN_EGG);
+        reg.getRegistry().register(ListaItems.DEEPSLATE_REDSTONE_SILVERFISH_EGG_SPAWN_EGG);
+        reg.getRegistry().register(ListaItems.DIAMOND_SILVERFISH_EGG_SPAWN_EGG);
+        reg.getRegistry().register(ListaItems.DEEPSLATE_DIAMOND_SILVERFISH_EGG_SPAWN_EGG);
+        reg.getRegistry().register(ListaItems.EMERALD_SILVERFISH_EGG_SPAWN_EGG);
+        reg.getRegistry().register(ListaItems.DEEPSLATE_EMERALD_SILVERFISH_EGG_SPAWN_EGG);
+        reg.getRegistry().register(ListaItems.QUARTZ_SILVERFISH_EGG_SPAWN_EGG);
+        reg.getRegistry().register(ListaItems.NETHERITE_SILVERFISH_EGG_SPAWN_EGG);
         
         ListaItems.INFESTED_COAL_ORE.setRegistryName(Util.getResLoc("infested_coal_ore"));
         ListaItems.INFESTED_DEEPSLATE_COAL_ORE.setRegistryName(Util.getResLoc("infested_deepslate_coal_ore"));

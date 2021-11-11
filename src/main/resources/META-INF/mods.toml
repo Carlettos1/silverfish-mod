@@ -3,7 +3,7 @@ loaderVersion="[37,)"
 license="All rights reserved"
 [[mods]]
 modId="silverfishmod"
-version="0.1"
+version="0.2 alpha"
 displayName="Silverfish Mod"
 logoFile="logo.png"
 credits="Gracias al aire"

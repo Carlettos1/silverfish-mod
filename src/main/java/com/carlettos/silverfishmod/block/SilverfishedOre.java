@@ -1,5 +1,6 @@
 package com.carlettos.silverfishmod.block;
 
+import com.carlettos.silverfishmod.entity.egg.MineralEgg;
 import com.carlettos.silverfishmod.util.Mineral;
 
 import net.minecraft.core.BlockPos;
@@ -31,19 +32,38 @@ public class SilverfishedOre extends InfestedBlock{
 
     protected void spawnInfestation(ServerLevel serverWorld, BlockPos pos) {
         Mineral mineral = Mineral.getFromBlock(bloque);
-        //TODO: fuerzas
         switch (mineral.fuerza) {
-        case DEBIL:
-            break;
-        case FUERTE:
-            break;
         case SUPER_FUERTE:
+            spawnEggs(serverWorld, pos, 4);
+            spawnSilverfish(serverWorld, pos);
+        case FUERTE:
+            spawnSilverfish(serverWorld, pos);
+        case DEBIL:
+            spawnEggs(serverWorld, pos, 4);
             break;
         default:
             throw new IllegalArgumentException("Unexpected value: " + Mineral.getFromBlock(bloque));
         }
-        Silverfish silverfish = Mineral.getFromBlock(this.bloque).getSilverfish().create(serverWorld);
-        silverfish.moveTo((double)pos.getX() + 0.5D, (double)pos.getY(), (double)pos.getZ() + 0.5D, 0.0F, 0.0F);
+    }
+    
+    private void spawnEggs(ServerLevel serverWorld, BlockPos pos, int quantity) {
+        Mineral mineral = Mineral.getFromBlock(bloque);
+        for (int i = 0; i < 4; i++) {
+            MineralEgg egg = mineral.getSilverfishEgg().create(serverWorld);
+            double x = pos.getX() + serverWorld.getRandom().nextDouble() * 0.4 + 0.3;
+            double z = pos.getZ() + serverWorld.getRandom().nextDouble() * 0.4 + 0.3;
+            egg.moveTo(x, pos.getY(), z, 0F, 0F);
+            serverWorld.addFreshEntity(egg);
+            egg.spawnAnim();
+        }
+    }
+    
+    private void spawnSilverfish(ServerLevel serverWorld, BlockPos pos) {
+        Mineral mineral = Mineral.getFromBlock(bloque);
+        Silverfish silverfish = mineral.getSilverfish().create(serverWorld);
+        double x = pos.getX() + serverWorld.getRandom().nextDouble() * 0.4 + 0.3;
+        double z = pos.getZ() + serverWorld.getRandom().nextDouble() * 0.4 + 0.3;
+        silverfish.moveTo(x, pos.getY(), z, 0.0F, 0.0F);
         serverWorld.addFreshEntity(silverfish);
         silverfish.spawnAnim();
     }

@@ -1,4 +1,4 @@
-package com.carlettos.silverfishmod.mob.silverfish;
+package com.carlettos.silverfishmod.entity.silverfish;
 
 import com.carlettos.silverfishmod.util.Util;
 

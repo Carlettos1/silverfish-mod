@@ -75,7 +75,7 @@ public class RegistryEntity {
         reg.getRegistry().register(ListaEntidades.COAL_SILVERFISH_EGG);
         reg.getRegistry().register(ListaEntidades.DEEPSLATE_COAL_SILVERFISH_EGG);
         reg.getRegistry().register(ListaEntidades.COPPER_SILVERFISH_EGG);
-        reg.getRegistry().register(ListaEntidades.DEEPSLATE_COPPER_SILVERFISH);
+        reg.getRegistry().register(ListaEntidades.DEEPSLATE_COPPER_SILVERFISH_EGG);
         reg.getRegistry().register(ListaEntidades.LAPIS_SILVERFISH_EGG);
         reg.getRegistry().register(ListaEntidades.DEEPSLATE_LAPIS_SILVERFISH_EGG);
         reg.getRegistry().register(ListaEntidades.IRON_SILVERFISH_EGG);
