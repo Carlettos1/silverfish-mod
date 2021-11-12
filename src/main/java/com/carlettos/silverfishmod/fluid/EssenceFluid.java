@@ -6,6 +6,8 @@ import com.carlettos.silverfishmod.util.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.FluidTags;
+import net.minecraft.tags.Tag;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
@@ -21,6 +23,7 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraftforge.fluids.FluidAttributes;
 
 public abstract class EssenceFluid extends FlowingFluid{
+    public static final Tag.Named<Fluid> MINERAL = FluidTags.bind(Util.MOD_ID + ":mineral");
     public final Essence essence;
     
     public EssenceFluid(Essence essence) {
@@ -35,7 +38,6 @@ public abstract class EssenceFluid extends FlowingFluid{
                 Util.getResLoc("block/" + nombre + "_flow"))
                 .overlay(Util.getResLoc("block/" + nombre + "_overlay"))
                 .translationKey("block.silverfishmod." + nombre)
-                .color(0)
                 .density(3000).viscosity(6000).temperature(1300)
                 .sound(SoundEvents.BUCKET_FILL, SoundEvents.BUCKET_EMPTY)
                 .build(this);

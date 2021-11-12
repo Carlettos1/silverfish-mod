@@ -1,5 +1,6 @@
 package com.carlettos.silverfishmod.listas;
 
+import com.carlettos.silverfishmod.block.EssenceFluidBlock;
 import com.carlettos.silverfishmod.block.SilverfishedOre;
 
 import net.minecraft.world.level.block.Block;
@@ -86,11 +87,11 @@ public class ListaBloques {
     }
     
     public static final SilverfishedOre createSilverfishedOre(Block block) {
-        return new SilverfishedOre(block, BlockBehaviour.Properties.of(Material.CLAY));
+        return new SilverfishedOre(block, BlockBehaviour.Properties.of(Material.STONE));
     }
 
-    @SuppressWarnings("deprecation") //FIXME: cannot use supplier bcs this.fluid == null in that constructor
+    //FIXME: cannot use supplier bcs this.fluid == null in that constructor
     public static final LiquidBlock createLiquidBlock(FlowingFluid fluid) {
-        return new LiquidBlock(fluid, BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100).noDrops());
+        return new EssenceFluidBlock(fluid);
     }
 }

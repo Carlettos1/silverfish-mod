@@ -178,14 +178,24 @@ public class MineralSilverfish extends Silverfish{
     static class SilverfishMergeWithStoneGoal extends RandomStrollGoal {
         private Direction selectedDirection;
         private boolean doMerge;
+        private int time;
     
         public SilverfishMergeWithStoneGoal(MineralSilverfish silverfish) {
             super(silverfish, 1.0D, 10);
             this.setFlags(EnumSet.of(Goal.Flag.MOVE));
+            this.time = 0;
+        }
+        
+        @Override
+        public void stop() {
+            this.time = 0;
+            super.stop();
         }
     
         public boolean canUse() {
-            if (this.mob.getTarget() != null) {
+            if(++this.time < 38) {
+                return false;
+            } else if (this.mob.getTarget() != null) {
                 return false;
             } else if (!this.mob.getNavigation().isDone()) {
                 return false;
