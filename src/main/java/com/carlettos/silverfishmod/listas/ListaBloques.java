@@ -4,6 +4,7 @@ import com.carlettos.silverfishmod.block.SilverfishedOre;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.InfestedBlock;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.FlowingFluid;
@@ -52,6 +53,16 @@ public class ListaBloques {
         EMERALD = createLiquidBlock(ListaFluidos.EMERALD);
         QUARTZ = createLiquidBlock(ListaFluidos.QUARTZ);
         NETHERITE = createLiquidBlock(ListaFluidos.NETHERITE);
+        
+        //FIXME: añadir al map BLOCK_BY_HOST_BLOCK de InfestedBlock de una forma más elegante.
+        new InfestedBlock(Blocks.TUFF, BlockBehaviour.Properties.of(Material.STONE));
+        new InfestedBlock(Blocks.GRAVEL, BlockBehaviour.Properties.of(Material.STONE));
+        new InfestedBlock(Blocks.DIORITE, BlockBehaviour.Properties.of(Material.STONE));
+        new InfestedBlock(Blocks.GRANITE, BlockBehaviour.Properties.of(Material.STONE));
+        new InfestedBlock(Blocks.ANDESITE, BlockBehaviour.Properties.of(Material.STONE));
+        new InfestedBlock(Blocks.DEEPSLATE, BlockBehaviour.Properties.of(Material.STONE));
+        new InfestedBlock(Blocks.NETHERRACK, BlockBehaviour.Properties.of(Material.STONE));
+        new InfestedBlock(Blocks.BLACKSTONE, BlockBehaviour.Properties.of(Material.STONE));
         
         INFESTED_COAL_ORE = createSilverfishedOre(Blocks.COAL_ORE);
         INFESTED_DEEPSLATE_COAL_ORE = createSilverfishedOre(Blocks.DEEPSLATE_COAL_ORE);
