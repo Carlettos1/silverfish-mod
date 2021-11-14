@@ -7,6 +7,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.carlettos.silverfishmod.essence.util.EssenceLevel;
+import com.carlettos.silverfishmod.essence.world.EssenceChunk;
+import com.carlettos.silverfishmod.essence.world.EssenceWorld;
 import com.carlettos.silverfishmod.util.Par;
 import com.carlettos.silverfishmod.util.Util;
 

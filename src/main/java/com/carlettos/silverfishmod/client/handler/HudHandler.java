@@ -1,7 +1,7 @@
 package com.carlettos.silverfishmod.client.handler;
 
-import com.carlettos.silverfishmod.essence.EssenceChunk;
 import com.carlettos.silverfishmod.essence.util.EssenceLevel;
+import com.carlettos.silverfishmod.essence.world.EssenceChunk;
 import com.carlettos.silverfishmod.util.Util;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;

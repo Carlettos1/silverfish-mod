@@ -1,12 +1,12 @@
 package com.carlettos.silverfishmod.listas;
 
-import com.carlettos.silverfishmod.entity.egg.MineralEgg;
-import com.carlettos.silverfishmod.entity.silverfish.MineralSilverfish;
-import com.carlettos.silverfishmod.item.Detector;
-import com.carlettos.silverfishmod.item.SilverfishAwakener;
-import com.carlettos.silverfishmod.item.SilverfishedEssence;
 import com.carlettos.silverfishmod.util.Essence;
 import com.carlettos.silverfishmod.util.Util;
+import com.carlettos.silverfishmod.world.entity.MineralEgg;
+import com.carlettos.silverfishmod.world.entity.MineralSilverfish;
+import com.carlettos.silverfishmod.world.item.Detector;
+import com.carlettos.silverfishmod.world.item.SilverfishAwakener;
+import com.carlettos.silverfishmod.world.item.SilverfishedEssence;
 
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;

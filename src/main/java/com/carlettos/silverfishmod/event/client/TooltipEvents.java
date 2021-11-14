@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.carlettos.silverfishmod.client.helper.TooltipHelper;
 import com.carlettos.silverfishmod.tooltip.test.DetectorTooltip;
+import com.carlettos.silverfishmod.util.Util;
 import com.mojang.datafixers.util.Either;
 
 import net.minecraft.network.chat.FormattedText;
@@ -18,7 +19,7 @@ import net.minecraftforge.client.event.RenderTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber(modid=Util.MOD_ID)
 public class TooltipEvents {
     
     @OnlyIn(Dist.CLIENT)

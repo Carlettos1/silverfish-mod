@@ -1,7 +1,7 @@
 package com.carlettos.silverfishmod.listas;
 
-import com.carlettos.silverfishmod.block.EssenceFluidBlock;
-import com.carlettos.silverfishmod.block.SilverfishedOre;
+import com.carlettos.silverfishmod.world.block.EssenceFluidBlock;
+import com.carlettos.silverfishmod.world.block.SilverfishedOre;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;

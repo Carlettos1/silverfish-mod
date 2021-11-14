@@ -1,9 +1,9 @@
 package com.carlettos.silverfishmod.listas;
 
-import com.carlettos.silverfishmod.entity.egg.MineralEgg;
-import com.carlettos.silverfishmod.entity.silverfish.MineralSilverfish;
 import com.carlettos.silverfishmod.util.Mineral;
 import com.carlettos.silverfishmod.util.Util;
+import com.carlettos.silverfishmod.world.entity.MineralEgg;
+import com.carlettos.silverfishmod.world.entity.MineralSilverfish;
 
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;

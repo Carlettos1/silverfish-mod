@@ -1,7 +1,7 @@
 package com.carlettos.silverfishmod.essence.connection;
 
-import com.carlettos.silverfishmod.essence.EssenceChunk;
 import com.carlettos.silverfishmod.essence.util.EssenceLevel;
+import com.carlettos.silverfishmod.essence.world.EssenceChunk;
 
 public class EssencePacket{
     public EssenceLevel escencias;

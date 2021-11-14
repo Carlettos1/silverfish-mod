@@ -1,7 +1,7 @@
 package com.carlettos.silverfishmod.listas;
 
-import com.carlettos.silverfishmod.fluid.EssenceFluid;
 import com.carlettos.silverfishmod.util.Essence;
+import com.carlettos.silverfishmod.world.fluid.EssenceFluid;
 
 import net.minecraft.world.level.material.FlowingFluid;
 
