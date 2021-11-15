@@ -1,17 +1,21 @@
 package com.carlettos.silverfishmod.listas;
 
 import com.carlettos.silverfishmod.world.block.EssenceFluidBlock;
+import com.carlettos.silverfishmod.world.block.EssenceTableBlock;
 import com.carlettos.silverfishmod.world.block.SilverfishedOre;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.InfestedBlock;
 import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Material;
 
 public class ListaBloques {
+    public static final Block ESSENCE_TABLE;
+    
     public static final Block COAL;
     public static final Block COPPER;
     public static final Block LAPIS;
@@ -44,6 +48,8 @@ public class ListaBloques {
     public static final Block INFESTED_ANCIENT_DEBRIS;
     
     static {
+        ESSENCE_TABLE = new EssenceTableBlock(BlockBehaviour.Properties.of(Material.STONE).strength(3F).sound(SoundType.STONE));
+        
         COAL = createLiquidBlock(ListaFluidos.COAL);
         COPPER = createLiquidBlock(ListaFluidos.COPPER);
         LAPIS = createLiquidBlock(ListaFluidos.LAPIS);

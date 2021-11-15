@@ -8,7 +8,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD, modid=Util.MOD_ID)
-public class RegistryFeatures {
+public class RegistryFeature {
     @SubscribeEvent
     public static void registerFeatures(final RegistryEvent.Register<Feature<?>> event) {
     }

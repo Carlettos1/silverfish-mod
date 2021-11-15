@@ -12,6 +12,10 @@ import net.minecraftforge.fml.common.Mod;
 public class RegistryBlock {
     @SubscribeEvent
     public static void registerBlocks(final RegistryEvent.Register<Block> reg) {
+        ListaBloques.ESSENCE_TABLE.setRegistryName(Util.getResLoc("essence_table"));
+        
+        reg.getRegistry().register(ListaBloques.ESSENCE_TABLE);
+        
         ListaBloques.COAL.setRegistryName(Util.getResLoc("coal"));
         ListaBloques.COPPER.setRegistryName(Util.getResLoc("copper"));
         ListaBloques.LAPIS.setRegistryName(Util.getResLoc("lapis"));

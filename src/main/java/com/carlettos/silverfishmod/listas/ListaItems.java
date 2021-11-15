@@ -18,6 +18,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.FlowingFluid;
 
 public class ListaItems {
+    public static final Item ESSENCE_TABLE;
+    
     public static final Item DETECTOR;
     public static final Item SILVERFISH_AWAKENER;
     public static final Item COAL_BUCKET;
@@ -107,6 +109,7 @@ public class ListaItems {
     public static final Item SILVERFISHED_NETHERITE;
     
     static {
+        ESSENCE_TABLE = createBlockItem(ListaBloques.ESSENCE_TABLE);
         DETECTOR = new Detector(new Item.Properties().tab(Util.GRUPO).defaultDurability(1500));
         SILVERFISH_AWAKENER = new SilverfishAwakener();
         

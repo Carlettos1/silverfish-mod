@@ -1,0 +1,16 @@
+{
+  "type": "silverfishmod:essence_shaped",
+  "pattern": [
+    "# ",
+    " #"
+  ],
+  "key": {
+    "#": {
+      "item": "silverfishmod:silverfished_coal"
+    }
+  },
+  "result": {
+    "item": "minecraft:coal",
+    "count": 1
+  }
+}
