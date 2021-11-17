@@ -1,6 +1,15 @@
 {
   "replace": false,
   "values": [
-    "#forge:ores/copper"
+    "#forge:ores/coal",
+    "#forge:ores/lapis",
+    "#forge:ores/copper",
+    "#forge:ores/iron",
+    "#forge:ores/gold",
+    "#forge:ores/redstone",
+    "#forge:ores/diamond",
+    "#forge:ores/emerald",
+    "#forge:ores/quartz",
+    "#forge:ores/netherite_scrap"
   ]
 }

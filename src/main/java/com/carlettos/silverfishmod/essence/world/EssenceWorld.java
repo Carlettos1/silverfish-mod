@@ -2,28 +2,28 @@ package com.carlettos.silverfishmod.essence.world;
 
 import java.util.concurrent.ConcurrentHashMap;
 
-import com.carlettos.silverfishmod.util.Par;
+import com.carlettos.silverfishmod.util.ParInt;
 
 public class EssenceWorld {
-    private ConcurrentHashMap<Par, EssenceChunk> essenceChunks;
+    private ConcurrentHashMap<ParInt, EssenceChunk> essenceChunks;
     
     public EssenceWorld() {
-        this.essenceChunks = new ConcurrentHashMap<Par, EssenceChunk>();
+        this.essenceChunks = new ConcurrentHashMap<ParInt, EssenceChunk>();
     }
     
-    public ConcurrentHashMap<Par, EssenceChunk> getEssenceChunks() {
+    public ConcurrentHashMap<ParInt, EssenceChunk> getEssenceChunks() {
         return essenceChunks;
     }
     
-    public void setEssenceChunks(ConcurrentHashMap<Par, EssenceChunk> essenceChunks) {
+    public void setEssenceChunks(ConcurrentHashMap<ParInt, EssenceChunk> essenceChunks) {
         this.essenceChunks = essenceChunks;
     }
     
     public EssenceChunk getEssenceChunkAt(int x, int y) {
-        return getEssenceChunkAt(new Par(x, y));
+        return getEssenceChunkAt(new ParInt(x, y));
     }
     
-    public EssenceChunk getEssenceChunkAt(Par par) {
+    public EssenceChunk getEssenceChunkAt(ParInt par) {
         return essenceChunks.get(par);
     }
 }

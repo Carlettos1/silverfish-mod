@@ -11,7 +11,7 @@ import com.carlettos.silverfishmod.essence.util.EssenceLevel;
 import com.carlettos.silverfishmod.essence.world.EssenceChunk;
 import com.carlettos.silverfishmod.essence.world.EssenceWorld;
 import com.carlettos.silverfishmod.util.Essence;
-import com.carlettos.silverfishmod.util.Par;
+import com.carlettos.silverfishmod.util.ParInt;
 import com.carlettos.silverfishmod.util.Util;
 
 import net.minecraft.core.BlockPos;
@@ -44,7 +44,7 @@ public class EssenceManager {
     }
     
     public static void removeEssenceChunk(DimensionType dim, ChunkPos pos) {
-        getEssenceWorld(dim).getEssenceChunks().remove(Par.fromChunkPos(pos));
+        getEssenceWorld(dim).getEssenceChunks().remove(ParInt.fromChunkPos(pos));
     }
     
     public static void createEssenceChunk(DimensionType dim, ChunkPos pos, Random rand) {
@@ -52,12 +52,12 @@ public class EssenceManager {
     }
     
     public static void addEssenceChunk(DimensionType dim, ChunkPos pos, EssenceLevel escencias) {
-        getEssenceWorld(dim).getEssenceChunks().put(Par.fromChunkPos(pos), new EssenceChunk(pos, escencias));
+        getEssenceWorld(dim).getEssenceChunks().put(ParInt.fromChunkPos(pos), new EssenceChunk(pos, escencias));
     }
     
     @Nullable
     public static EssenceChunk getEssenceChunk(DimensionType dim, ChunkPos pos) {
-        return getEssenceWorld(dim).getEssenceChunkAt(Par.fromChunkPos(pos));
+        return getEssenceWorld(dim).getEssenceChunkAt(ParInt.fromChunkPos(pos));
     }
     
     @Nonnull

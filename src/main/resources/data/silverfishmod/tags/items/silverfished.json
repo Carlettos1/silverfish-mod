@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:ingots",
+    "#forge:nuggets",
+    "#forge:gems",
+    "#forge:ores",
+    "#forge:gravel",
+    "#forge:cobblestone",
+    "#forge:netherrack",
+    "#forge:obsidian",
+    "#forge:sandstone",
+    "#forge:stone"
+  ]
+}
