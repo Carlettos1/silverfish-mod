@@ -6,8 +6,10 @@ import com.carlettos.silverfishmod.client.handler.HudHandler;
 import com.carlettos.silverfishmod.connection.PacketHandler;
 import com.carlettos.silverfishmod.essence.EssenceManager;
 import com.carlettos.silverfishmod.essence.connection.EssencePacket;
-import com.carlettos.silverfishmod.tooltip.test.DetectorTooltip;
+import com.carlettos.silverfishmod.world.inventory.TextTooltip;
 
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Style;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
@@ -39,6 +41,6 @@ public class Detector extends Item{
     
     @Override
     public Optional<TooltipComponent> getTooltipImage(ItemStack p_150902_) {
-        return Optional.of(new DetectorTooltip(HudHandler.currentChunk.getTotalEssence()));
+        return Optional.of(new TextTooltip("Last Essence Recorded: " + HudHandler.currentChunk.getTotalEssence(), Style.EMPTY.withColor(ChatFormatting.DARK_PURPLE).withItalic(true)));
     }
 }
