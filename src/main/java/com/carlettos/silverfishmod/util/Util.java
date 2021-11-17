@@ -4,12 +4,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.carlettos.silverfishmod.SilverFishMod;
+import com.carlettos.silverfishmod.listas.ListaItems;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 
 public class Util {
     private static final Logger LOG = LogManager.getLogger(SilverFishMod.class);
@@ -17,7 +17,7 @@ public class Util {
     public static final CreativeModeTab GRUPO = new CreativeModeTab(-1, "silverfishmod") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(Items.APPLE);
+            return new ItemStack(ListaItems.DETECTOR);
         }
     };
     

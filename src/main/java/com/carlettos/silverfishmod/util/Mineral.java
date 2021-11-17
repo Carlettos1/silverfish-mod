@@ -92,7 +92,7 @@ public enum Mineral {
             case NETHERITE:
                 return ListaBloques.INFESTED_ANCIENT_DEBRIS;
             default:
-                return Blocks.AIR;//TODO: throw exception
+                throw new IllegalArgumentException("No block for mineral: " + this);
         }
     }
     
@@ -137,7 +137,7 @@ public enum Mineral {
             case NETHERITE:
                 return ListaEntidades.NETHERITE_SILVERFISH;
             default:
-                return ListaEntidades.COAL_SILVERFISH;//TODO: throw exception
+                throw new IllegalArgumentException("No silverfish for mineral: " + this);
         }
     }
     
@@ -182,7 +182,7 @@ public enum Mineral {
             case NETHERITE:
                 return ListaEntidades.NETHERITE_SILVERFISH_EGG;
             default:
-                return ListaEntidades.COAL_SILVERFISH_EGG;//TODO: throw exception
+                throw new IllegalArgumentException("No silverfish egg for mineral: " + this);
         }
     }
 }

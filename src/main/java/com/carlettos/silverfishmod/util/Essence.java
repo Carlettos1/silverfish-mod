@@ -7,9 +7,7 @@ import com.carlettos.silverfishmod.listas.ListaItems;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluid;
-import net.minecraft.world.level.material.Fluids;
 
 public enum Essence {
     COAL(Items.COAL),
@@ -97,7 +95,7 @@ public enum Essence {
         case NETHERITE:
             return ListaBloques.NETHERITE;
         default:
-            return Blocks.AIR;
+            throw new IllegalArgumentException("No fluid block for : " + this);
         }
     }
     
@@ -124,7 +122,7 @@ public enum Essence {
         case NETHERITE:
             return ListaFluidos.NETHERITE;
         default:
-            return Fluids.EMPTY;
+            throw new IllegalArgumentException("No fluid source for : " + this);
         }
     }
     
@@ -151,7 +149,7 @@ public enum Essence {
         case NETHERITE:
             return ListaFluidos.FLOWING_NETHERITE;
         default:
-            return Fluids.EMPTY;
+            throw new IllegalArgumentException("No flowing fluid for : " + this);
         }
     }
     
@@ -178,7 +176,7 @@ public enum Essence {
         case NETHERITE:
             return ListaItems.NETHERITE_BUCKET;
         default:
-            return Items.AIR;
+            throw new IllegalArgumentException("No fluid bucket for : " + this);
         }
     }
 
