@@ -1,0 +1,28 @@
+{
+  "type": "silverfishmod:essence_shaped",
+  "pattern": [
+    "S ",
+    " S"
+  ],
+  "key": {
+    "S": {
+      "item": "silverfishmod:silverfished_emerald"
+    }
+  },
+  "level": {
+  	"coal": 0,
+  	"copper": 0,
+  	"lapis": 0,
+  	"iron": 0,
+  	"gold": 0,
+  	"redstone": 0,
+  	"diamond": 0,
+  	"emerald": 10,
+  	"quartz": 0,
+  	"netherite": 0
+  },
+  "result": {
+    "item": "minecraft:emerald",
+    "count": 1
+  }
+}

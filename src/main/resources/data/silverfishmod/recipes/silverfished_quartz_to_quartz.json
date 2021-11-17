@@ -1,0 +1,28 @@
+{
+  "type": "silverfishmod:essence_shaped",
+  "pattern": [
+    "S ",
+    " S"
+  ],
+  "key": {
+    "S": {
+      "item": "silverfishmod:silverfished_quartz"
+    }
+  },
+  "level": {
+  	"coal": 0,
+  	"copper": 0,
+  	"lapis": 0,
+  	"iron": 0,
+  	"gold": 0,
+  	"redstone": 0,
+  	"diamond": 0,
+  	"emerald": 0,
+  	"quartz": 10,
+  	"netherite": 0
+  },
+  "result": {
+    "item": "minecraft:quartz",
+    "count": 1
+  }
+}
