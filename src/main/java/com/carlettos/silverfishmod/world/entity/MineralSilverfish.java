@@ -51,116 +51,126 @@ public class MineralSilverfish extends Silverfish{
 
     public static AttributeSupplier.Builder createAttributes(Mineral mineral){
         AttributeSupplier.Builder builder = Silverfish.createAttributes().add(Attributes.FOLLOW_RANGE, 64D);
-        double vida = 8d;
-        double speed = 0.25d;
-        double atk = 1d;
-        double def = 1d;
+        //31 el warden, 20 el enderman, 1 el silverfish
+        double vida = 8d; //40
+        double speed = 0.25d; // 0.3
+        double atk = 1d; //7
+        double def = 0d; //0
         //TODO: atributos correctos
         switch (mineral) {
         case COAL:
-            atk += 1d;
+            vida = 4d;
+            speed = 0.25d;
+            atk = 1d;
+            def = 0d;
             break;
         case DEEPSLATE_COAL:
-            vida += 2d;
-            atk += 1d;
-            def += 1d;
+            vida = 8d;
+            speed = 0.25d;
+            atk = 1d;
+            def = 1d;
             break;
         case COPPER:
-            atk += 2d;
+            vida = 6d;
+            speed = 0.25d;
+            atk = 1d;
+            def = 0d;
             break;
         case DEEPSLATE_COPPER:
-            vida += 2d;
-            atk += 2d;
-            def += 1d;
+            vida = 10d;
+            speed = 0.25d;
+            atk = 1d;
+            def = 1d;
             break;
         case LAPIS:
-            vida += 2d;
-            speed += 0.50d;
-            atk += 2d;
+            vida = 8d;
+            speed = 0.25d;
+            atk = 2d;
+            def = 1d;
             break;
         case DEEPSLATE_LAPIS:
-            vida += 4d;
-            speed += 0.50d;
-            atk += 3d;
-            def += 2d;
+            vida = 10d;
+            speed = 0.25d;
+            atk = 2d;
+            def = 2d;
             break;
         case IRON:
-            vida += 4d;
-            speed += 0.25d;
-            atk += 3d;
-            def += 1d;
+            vida = 8d;
+            speed = 0.25d;
+            atk = 2d;
+            def = 0d;
             break;
         case DEEPSLATE_IRON:
-            vida += 6d;
-            speed += 0.25d;
-            atk += 4d;
-            def += 2d;
+            vida = 10d;
+            speed = 0.35d;
+            atk = 2d;
+            def = 2d;
             break;
         case GOLD:
-            vida += 6d;
-            speed += 0.5d;
-            atk += 4d;
-            def += 2d;
+            vida = 8d;
+            speed = 0.5d;
+            atk = 2d;
+            def = 0d;
             break;
         case DEEPSLATE_GOLD:
-            vida += 8d;
-            speed += 0.5d;
-            atk += 10d;
-            def += 3d;
+            vida = 10d;
+            speed = 0.5d;
+            atk = 2d;
+            def = 1d;
             break;
         case NETHER_GOLD:
-            vida += 2d;
-            speed += 0.25d;
-            atk += 4d;
-            def += 1d;
+            vida = 6d;
+            speed = 0.5d;
+            atk = 1d;
+            def = 0d;
             break;
         case REDSTONE:
-            vida += 6d;
-            speed += 0.25d;
-            atk += 6d;
-            def += 2d;
+            vida = 10d;
+            speed = 0.25d;
+            atk = 4d;
+            def = 0d;
             break;
         case DEEPSLATE_REDSTONE:
-            vida += 10d;
-            speed += 0.5d;
-            atk += 8d;
-            def += 4d;
+            vida = 12d;
+            speed = 0.35d;
+            atk = 5d;
+            def = 1d;
             break;
         case DIAMOND:
-            vida += 12d;
-            speed += 0.5d;
-            atk += 10d;
-            def += 5d;
+            vida = 12d;
+            speed = 0.35d;
+            atk = 6d;
+            def = 0d;
             break;
         case DEEPSLATE_DIAMOND:
-            vida += 14d;
-            speed += 0.75d;
-            atk += 12d;
-            def += 7d;
+            vida = 16d;
+            speed = 0.35d;
+            atk = 8d;
+            def = 2d;
             break;
         case EMERALD:
-            vida += 14d;
-            speed += 0.5d;
-            atk += 12d;
-            def += 8d;
+            vida = 12d;
+            speed = 0.35d;
+            atk = 6d;
+            def = 1d;
             break;
         case DEEPSLATE_EMERALD:
-            vida += 16d;
-            speed += 0.75d;
-            atk += 16d;
-            def += 10d;
+            vida = 16d;
+            speed = 0.35d;
+            atk = 8d;
+            def = 2d;
             break;
         case QUARTZ:
-            vida += 6d;
-            speed += 0.25d;
-            atk += 6d;
-            def += 1d;
+            vida = 6d;
+            speed = 0.25d;
+            atk = 1d;
+            def = 0d;
             break;
         case NETHERITE:
-            vida += 20d;
-            speed += 1d;
-            atk += 24d;
-            def += 20d;
+            vida = 20d;
+            speed = 0.35d;
+            atk = 10d;
+            def = 4d;
             break;
         default:
             throw new IllegalArgumentException("Unexpected value (in MineralSilverfish::createAttributes): " + mineral);
