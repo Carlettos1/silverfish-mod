@@ -1,3 +1,6 @@
 {
-  "parent": "minecraft:item/apple"
+  "parent": "minecraft:item/generated",
+  "textures": {
+  	"layer0": "silverfishmod:item/detector"
+  }
 }
