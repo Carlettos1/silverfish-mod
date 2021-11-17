@@ -2,6 +2,7 @@ package com.carlettos.silverfishmod.world.item;
 
 import java.util.Optional;
 
+import com.carlettos.silverfishmod.client.handler.HudHandler;
 import com.carlettos.silverfishmod.connection.PacketHandler;
 import com.carlettos.silverfishmod.essence.EssenceManager;
 import com.carlettos.silverfishmod.essence.connection.EssencePacket;
@@ -15,7 +16,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 public class Detector extends Item{
-	private int z = 0;
 
     public Detector(Properties prop) {
         super(prop);
@@ -25,7 +25,7 @@ public class Detector extends Item{
     public void inventoryTick(ItemStack stack, Level world, Entity entity, int slot, boolean selected) {
         if(world.isClientSide && entity instanceof Player && (selected || ((Player)entity).getOffhandItem().getItem() instanceof Detector)) {
             if(entity.tickCount % 20 == 0) {
-                this.updateAura(world, (Player)entity);
+                this.updateEssence(world, (Player)entity);
             }
         }
         if(selected && !world.isClientSide && entity.tickCount % 20 == 0) {
@@ -33,11 +33,12 @@ public class Detector extends Item{
         }
     }
     
-    public void updateAura(Level level, Player player) {
+    public void updateEssence(Level level, Player player) {
         PacketHandler.INSTANCE.sendToServer(new EssencePacket(EssenceManager.getSafeEssenceChunk(level.dimensionType(), player.chunkPosition(), level.getRandom())));
     }
-
-    public Optional<TooltipComponent> getTooltipImage(ItemStack p_150775_) {
-       return Optional.of(new DetectorTooltip(++z));
+    
+    @Override
+    public Optional<TooltipComponent> getTooltipImage(ItemStack p_150902_) {
+        return Optional.of(new DetectorTooltip(HudHandler.currentChunk.getTotalEssence()));
     }
 }

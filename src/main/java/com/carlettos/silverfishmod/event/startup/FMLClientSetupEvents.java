@@ -4,13 +4,16 @@ import com.carlettos.silverfishmod.client.model.MineralEggModel;
 import com.carlettos.silverfishmod.client.renderer.MineralEggRenderer;
 import com.carlettos.silverfishmod.client.renderer.MineralSilverfishRenderer;
 import com.carlettos.silverfishmod.listas.ListaEntidades;
-import com.carlettos.silverfishmod.tooltip.test.DetectorClientTooltip;
 import com.carlettos.silverfishmod.tooltip.test.DetectorTooltip;
 import com.carlettos.silverfishmod.util.Util;
 import com.carlettos.silverfishmod.world.entity.MineralEgg;
 import com.carlettos.silverfishmod.world.entity.MineralSilverfish;
 
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.inventory.tooltip.ClientTextTooltip;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.network.chat.Style;
+import net.minecraft.util.FormattedCharSequence;
 import net.minecraftforge.client.ForgeHooksClient;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -70,6 +73,6 @@ public class FMLClientSetupEvents {
     
     @SubscribeEvent
     public static void registerTooltipComponentFactory(FMLClientSetupEvent event) {
-        MinecraftForgeClient.registerTooltipComponentFactory(DetectorTooltip.class, (tooltip) -> new DetectorClientTooltip(tooltip));
+        MinecraftForgeClient.registerTooltipComponentFactory(DetectorTooltip.class, (tooltip) -> new ClientTextTooltip(FormattedCharSequence.forward(tooltip.essenceLevel, Style.EMPTY.withColor(ChatFormatting.DARK_PURPLE).withItalic(true))));
     }
 }

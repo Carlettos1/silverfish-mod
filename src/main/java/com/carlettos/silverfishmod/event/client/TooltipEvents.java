@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.carlettos.silverfishmod.client.helper.TooltipHelper;
-import com.carlettos.silverfishmod.tooltip.test.DetectorTooltip;
 import com.carlettos.silverfishmod.util.Util;
+import com.carlettos.silverfishmod.world.item.SilverfishedEssence;
 import com.mojang.datafixers.util.Either;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.FormattedText;
+import net.minecraft.network.chat.Style;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Recipe;
@@ -25,8 +27,10 @@ public class TooltipEvents {
     @OnlyIn(Dist.CLIENT)
     @SubscribeEvent
     public static void onTooltipRender(RenderTooltipEvent.GatherComponents event) {
-        event.getTooltipElements().add(Either.right(new DetectorTooltip(0)));
-        event.getTooltipElements().add(Either.left(FormattedText.of(getingredientes(event.getStack().getItem()).toString())));
+        //TODO: hacer un tooltip de sólo texto
+        if (event.getStack().getItem() instanceof SilverfishedEssence) {
+            event.getTooltipElements().add(Either.left(FormattedText.of("Silverfished...", Style.EMPTY.withColor(ChatFormatting.AQUA))));
+        }
     }
     
     @SubscribeEvent
