@@ -17,7 +17,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class HudHandler {
     private final static ResourceLocation GUI = Util.getResLoc("textures/gui/hud.png");
-    public static EssenceChunk currentChunk = new EssenceChunk(null, new EssenceLevel(0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
+    public static EssenceChunk currentChunk = new EssenceChunk(null, new EssenceLevel(0));
     
     @SuppressWarnings("resource")
     @OnlyIn(Dist.CLIENT)
@@ -41,16 +41,16 @@ public class HudHandler {
         float p = 0;
         int x = 10;
         int y = 10;
-        int xpos = 73;
-        int ypos = 50;
-        int xposfin = 86;
-        int yposfin = 125;
-        int dx = 2;
-        int dy = 6;
-        int xpose = 87;
-        int ypose = 55;
-        int xposefin = 96;
-        int yposefin = 120;
+        int xpos = 0;
+        int ypos = 0;
+        int xposfin = 11;
+        int yposfin = 73;
+        int xpose = 13;
+        int ypose = 4;
+        int xposefin = 22;
+        int yposefin = 69;
+        int dx = 1;
+        int dy = ypose - ypos;
         int largo = yposefin-ypose;
         
         RenderSystem.setShaderColor(0, 0, 0, 1F); //coal
