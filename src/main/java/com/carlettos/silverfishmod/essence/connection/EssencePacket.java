@@ -4,16 +4,16 @@ import com.carlettos.silverfishmod.essence.util.EssenceLevel;
 import com.carlettos.silverfishmod.essence.world.EssenceChunk;
 
 public class EssencePacket{
-    public EssenceLevel escencias;
+    public EssenceLevel essences;
     
     public EssencePacket() {
     }
     
     public EssencePacket(EssenceChunk chunk) {
-        this.escencias = chunk.getEscenciasCopy();
+        this.essences = chunk.getEssencesCopy();
     }
     
     public EssencePacket(EssenceLevel escencias) {
-        this.escencias = escencias;
+        this.essences = escencias;
     }
 }

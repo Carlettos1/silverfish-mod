@@ -1,10 +1,10 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "silverfishmod:block/essence_table_top",
-		"1": "silverfishmod:block/essence_table_side",
-		"2": "silverfishmod:block/essence_table_bottom",
-		"particle": "silverfishmod:block/essence_table_top"
+		"0": "arriba",
+		"1": "lados",
+		"2": "abajo",
+		"particle": "arriba"
 	},
 	"elements": [
 		{

@@ -5,13 +5,12 @@ import java.util.List;
 import java.util.Random;
 
 import com.carlettos.silverfishmod.essence.EssenceManager;
-import com.carlettos.silverfishmod.essence.world.EssenceChunk;
+import com.carlettos.silverfishmod.essence.util.ConditionEffect;
 import com.carlettos.silverfishmod.util.Essence;
 import com.carlettos.silverfishmod.util.Mineral;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -20,7 +19,6 @@ import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.WrappedGoal;
 import net.minecraft.world.entity.monster.Silverfish;
-import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.InfestedBlock;
@@ -38,12 +36,7 @@ public class MineralSilverfish extends Silverfish{
     @Override
     public void die(DamageSource damageSource) {
         if (!this.isRemoved() && !this.dead) {
-            ChunkPos pos = this.level.getChunk(this.getOnPos()).getPos();
-            EssenceChunk chunk = EssenceManager.getSafeEssenceChunk(this.level.dimensionType(), pos, this.level.getRandom());
-            chunk.addRandomToEssence(this.mineral, this.random, this.level.getDifficulty());
-            if (chunk.activo && this.level instanceof ServerLevel) {
-                this.level.setBlock(this.getOnPos().above(), Essence.getEssenceFromMineral(this.mineral).getFluidBlockFromMineral().defaultBlockState(), 11);
-            }
+            EssenceManager.addRandomEssence(level, this.chunkPosition(), this.blockPosition(), Essence.getEssenceFromMineral(mineral), random, mineral.contenido, ConditionEffect.ESSENCE_ACTIVATION_CREATE_FLUIDS_CHECK.apply(this.level, this));
         }
         super.die(damageSource);
     }
@@ -62,7 +55,7 @@ public class MineralSilverfish extends Silverfish{
         double speed = 0.25d;
         double atk = 1d;
         double def = 1d;
-        
+        //TODO: atributos correctos
         switch (mineral) {
         case COAL:
             atk += 1d;

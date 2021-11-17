@@ -12,25 +12,19 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 
 public enum Essence {
-    NINGUNO(Items.AIR,                  (byte)-1),
-    COAL(Items.COAL,                    (byte)0),
-    COPPER(Items.RAW_COPPER,            (byte)1),
-    LAPIS(Items.LAPIS_LAZULI,           (byte)2),
-    IRON(Items.RAW_IRON,                (byte)3),
-    GOLD(Items.RAW_GOLD,                (byte)4),
-    REDSTONE(Items.REDSTONE,            (byte)5),
-    DIAMOND(Items.DIAMOND,              (byte)6),
-    EMERALD(Items.EMERALD,              (byte)7),
-    QUARTZ(Items.QUARTZ,                (byte)8),
-    NETHERITE(Items.NETHERITE_SCRAP,    (byte)9);
-
-    public static final Essence FIRST = COAL;
-    public static final Essence LAST = NETHERITE;
+    COAL(Items.COAL),
+    COPPER(Items.RAW_COPPER),
+    LAPIS(Items.LAPIS_LAZULI),
+    IRON(Items.RAW_IRON),
+    GOLD(Items.RAW_GOLD),
+    REDSTONE(Items.REDSTONE),
+    DIAMOND(Items.DIAMOND),
+    EMERALD(Items.EMERALD),
+    QUARTZ(Items.QUARTZ),
+    NETHERITE(Items.NETHERITE_SCRAP);
     
     public final Item item;
-    public final byte index;
-    private Essence(Item item, byte index) {
-        this.index = index;
+    private Essence(Item item) {
         this.item = item;
     }
     
@@ -66,7 +60,7 @@ public enum Essence {
         case NETHERITE:
             return NETHERITE;
         default:
-            return NINGUNO;
+            throw new IllegalArgumentException("No essence for mineral: " + mineral);
         }
     }
     
@@ -76,10 +70,11 @@ public enum Essence {
                 return mineralessence;
             }
         }
-        return NINGUNO;
+        throw new IllegalArgumentException("No essence for item: " + item);
     }
+
     
-    public Block getFluidBlockFromMineral() {
+    public Block getFluidBlock() {
         switch (this) {
         case COAL:
             return ListaBloques.COAL;
@@ -186,4 +181,5 @@ public enum Essence {
             return Items.AIR;
         }
     }
+
 }

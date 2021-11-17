@@ -1,5 +1,5 @@
 {
   "textures": {
-  	"particle": "silverfishmod:block/gold_still"
+  	"particle": "silverfishmod:block/liquid/gold_still"
   }
 }

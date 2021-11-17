@@ -23,6 +23,7 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraftforge.fluids.FluidAttributes;
 
 public abstract class EssenceFluid extends FlowingFluid{
+    //TODO: tags
     public static final Tag.Named<Fluid> MINERAL = FluidTags.bind(Util.MOD_ID + ":mineral");
     public final Essence essence;
     
@@ -34,9 +35,9 @@ public abstract class EssenceFluid extends FlowingFluid{
     protected FluidAttributes createAttributes() {
         String nombre = this.essence.name().toLowerCase();
         return FluidAttributes.builder(
-                Util.getResLoc("block/" + nombre + "_still"),
-                Util.getResLoc("block/" + nombre + "_flow"))
-                .overlay(Util.getResLoc("block/" + nombre + "_overlay"))
+                Util.getResLoc("block/liquid/" + nombre + "_still"),
+                Util.getResLoc("block/liquid/" + nombre + "_flow"))
+                .overlay(Util.getResLoc("block/liquid/" + nombre + "_overlay"))
                 .translationKey("block.silverfishmod." + nombre)
                 .density(3000).viscosity(6000).temperature(1300)
                 .sound(SoundEvents.BUCKET_FILL, SoundEvents.BUCKET_EMPTY)
@@ -60,7 +61,7 @@ public abstract class EssenceFluid extends FlowingFluid{
     
     @Override
     protected BlockState createLegacyBlock(FluidState state) {
-        return this.essence.getFluidBlockFromMineral().defaultBlockState().setValue(LiquidBlock.LEVEL, Integer.valueOf(getLegacyLevel(state)));
+        return this.essence.getFluidBlock().defaultBlockState().setValue(LiquidBlock.LEVEL, Integer.valueOf(getLegacyLevel(state)));
     }
 
     @Override

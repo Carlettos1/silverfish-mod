@@ -1,125 +1,71 @@
 package com.carlettos.silverfishmod.essence.world;
 
 import static com.carlettos.silverfishmod.essence.util.EssenceLevel.MAX_LEVEL;
-import static com.carlettos.silverfishmod.util.Essence.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import com.carlettos.silverfishmod.essence.util.EssenceLevel;
 import com.carlettos.silverfishmod.util.Essence;
-import com.carlettos.silverfishmod.util.Mineral;
 
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.level.ChunkPos;
 
 public class EssenceChunk {
-    public boolean activo;
+    //TODO: cambiar el list por un map?
+    public List<Essence> essenceActivation;
     public ChunkPos pos;
-    private EssenceLevel escencias;
+    private EssenceLevel essences;
     
     public EssenceChunk(ChunkPos pos, EssenceLevel escencias) {
         this.pos = pos;
-        this.escencias = escencias;
-        this.activo = false;
+        this.essences = escencias;
+        this.essenceActivation = new ArrayList<>();
     }
     
-    public EssenceLevel getEscenciasCopy() {
-        return escencias.getCopy();
+    public EssenceLevel getEssencesCopy() {
+        return essences.getCopy();
     }
     
-    private void addEscencia(byte index, float cantidad) {
-        this.escencias.setEscencia(index, this.escencias.getEscencia(index) + cantidad);
-        if(this.escencias.getEscencia(index) >= MAX_LEVEL) {
-            this.activo = true;
-            this.escencias.setEscencia(index, this.escencias.getEscencia(index) - MAX_LEVEL);
+    public void add(Essence essence, float cantidad, boolean check){
+        this.essences.add(essence, cantidad);
+        if (check) {
+            checkEssenceLevels();
         }
     }
     
-    public void addRandomToEssence(Mineral mineral, Random random, Difficulty difficulty) {
-        addEscencia(Essence.getEssenceFromMineral(mineral).index, random.nextFloat() * mineral.contenido * difficulty.getId() / 3);
+    public void set(Essence essence, float cantidad, boolean check){
+        this.essences.set(essence, cantidad);
+        if (check) {
+            checkEssenceLevels();
+        }
     }
     
-    public void addCoal(float cantidad) {
-        addEscencia(COAL.index, cantidad);
+    public float get(Essence essence){
+        return this.essences.get(essence);
     }
     
-    public void addCopper(float cantidad) {
-        addEscencia(COPPER.index, cantidad); 
+    public float getTotalEssence() {
+        return essences.getTotal();
     }
     
-    public void addLapis(float cantidad) {
-        addEscencia(LAPIS.index, cantidad); 
+    private void checkEssenceLevels() {
+        for (Essence essence : Essence.values()) {
+            if (this.get(essence) >= MAX_LEVEL) {
+                this.essenceActivation.add(essence);
+                this.add(essence, -MAX_LEVEL, true);
+            }
+        }
     }
     
-    public void addIron(float cantidad) {
-        addEscencia(IRON.index, cantidad); 
+    public void addRandom(Essence essence, Difficulty difficulty, Random random, float cantidad, boolean check) {
+        add(essence, random.nextFloat() * cantidad * difficulty.getId() / 3, check);
     }
     
-    public void addGold(float cantidad) {
-        addEscencia(GOLD.index, cantidad); 
-    }
-    
-    public void addRedstone(float cantidad) {
-        addEscencia(REDSTONE.index, cantidad); 
-    }
-    
-    public void addDiamond(float cantidad) {
-        addEscencia(DIAMOND.index, cantidad); 
-    }
-
-    public void addEmerald(float cantidad) {
-        addEscencia(EMERALD.index, cantidad); 
-    }
-    
-    public void addQuartz(float cantidad) {
-        addEscencia(QUARTZ.index, cantidad);
-    }
-    
-    public void addNetherita(float cantidad) {
-        addEscencia(NETHERITE.index, cantidad);
-    }
-    
-    public float getEscenciaTotal() {
-        return escencias.getEscenciaTotal();
-    }
-    
-    public float getCoal() {
-        return escencias.getCoal();
-    }
-    
-    public float getCopper() {
-        return escencias.getCopper();
-    }
-    
-    public float getLapis() {
-        return escencias.getLapis();
-    }
-    
-    public float getIron() {
-        return escencias.getIron();
-    }
-    
-    public float getGold() {
-        return escencias.getGold();
-    }
-    
-    public float getRedstone() {
-        return escencias.getRedstone();
-    }
-    
-    public float getDiamond() {
-        return escencias.getDiamond();
-    }
-
-    public float getEmerald() {
-        return escencias.getEmerald();
-    }
-    
-    public float getQuartz() {
-        return escencias.getQuartz();
-    }
-    
-    public float getNetherita() {
-        return escencias.getNetherita();
+    public void addEssenceLevel(EssenceLevel essencelevel, boolean check) {
+        for (Essence essence : Essence.values()) {
+            this.add(essence, essencelevel.get(essence), check);
+        }
     }
 }

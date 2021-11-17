@@ -2,6 +2,7 @@ package com.carlettos.silverfishmod.client.handler;
 
 import com.carlettos.silverfishmod.essence.util.EssenceLevel;
 import com.carlettos.silverfishmod.essence.world.EssenceChunk;
+import com.carlettos.silverfishmod.util.Essence;
 import com.carlettos.silverfishmod.util.Util;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -25,16 +26,16 @@ public class HudHandler {
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderTexture(0, GUI);
 
-        float pcoal = HudHandler.currentChunk.getCoal() / HudHandler.currentChunk.getEscenciaTotal();
-        float pcopper= HudHandler.currentChunk.getCopper() / HudHandler.currentChunk.getEscenciaTotal();
-        float plapis = HudHandler.currentChunk.getLapis() / HudHandler.currentChunk.getEscenciaTotal();
-        float piron = HudHandler.currentChunk.getIron() / HudHandler.currentChunk.getEscenciaTotal();
-        float pgold= HudHandler.currentChunk.getGold() / HudHandler.currentChunk.getEscenciaTotal();
-        float predstone= HudHandler.currentChunk.getRedstone() / HudHandler.currentChunk.getEscenciaTotal();
-        float pdiamond= HudHandler.currentChunk.getDiamond() / HudHandler.currentChunk.getEscenciaTotal();
-        float pemerald= HudHandler.currentChunk.getEmerald() / HudHandler.currentChunk.getEscenciaTotal();
-        float pquartz= HudHandler.currentChunk.getQuartz() / HudHandler.currentChunk.getEscenciaTotal();
-        float pnetherita= HudHandler.currentChunk.getNetherita() / HudHandler.currentChunk.getEscenciaTotal();
+        float pcoal = HudHandler.currentChunk.get(Essence.COAL) / HudHandler.currentChunk.getTotalEssence();
+        float pcopper= HudHandler.currentChunk.get(Essence.COPPER) / HudHandler.currentChunk.getTotalEssence();
+        float plapis = HudHandler.currentChunk.get(Essence.LAPIS) / HudHandler.currentChunk.getTotalEssence();
+        float piron = HudHandler.currentChunk.get(Essence.IRON) / HudHandler.currentChunk.getTotalEssence();
+        float pgold= HudHandler.currentChunk.get(Essence.GOLD) / HudHandler.currentChunk.getTotalEssence();
+        float predstone= HudHandler.currentChunk.get(Essence.REDSTONE) / HudHandler.currentChunk.getTotalEssence();
+        float pdiamond= HudHandler.currentChunk.get(Essence.DIAMOND) / HudHandler.currentChunk.getTotalEssence();
+        float pemerald= HudHandler.currentChunk.get(Essence.EMERALD) / HudHandler.currentChunk.getTotalEssence();
+        float pquartz= HudHandler.currentChunk.get(Essence.QUARTZ) / HudHandler.currentChunk.getTotalEssence();
+        float pnetherita= HudHandler.currentChunk.get(Essence.NETHERITE) / HudHandler.currentChunk.getTotalEssence();
         int blitoffset = -90;
         PoseStack pose = new PoseStack();
         float p = 0;
@@ -88,7 +89,7 @@ public class HudHandler {
         
         if(player.isShiftKeyDown()) { 
             pose.scale(0.5F, 0.5F, 0.5F);
-            Gui.drawString(pose, Minecraft.getInstance().gui.getFont(), "Total Essence: " + (int)HudHandler.currentChunk.getEscenciaTotal(), 2*(2*x + dx), 2*(y + dy), blitoffset);
+            Gui.drawString(pose, Minecraft.getInstance().gui.getFont(), "Total Essence: " + (int)HudHandler.currentChunk.getTotalEssence(), 2*(2*x + dx), 2*(y + dy), blitoffset);
         }
     }
 }

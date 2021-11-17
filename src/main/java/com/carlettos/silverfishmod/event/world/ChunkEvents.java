@@ -3,6 +3,7 @@ package com.carlettos.silverfishmod.event.world;
 import com.carlettos.silverfishmod.essence.EssenceManager;
 import com.carlettos.silverfishmod.essence.util.EssenceLevel;
 import com.carlettos.silverfishmod.essence.world.EssenceChunk;
+import com.carlettos.silverfishmod.util.Essence;
 import com.carlettos.silverfishmod.util.Util;
 
 import net.minecraft.nbt.CompoundTag;
@@ -31,16 +32,16 @@ public class ChunkEvents {
             EssenceManager.createEssenceChunk(dim, event.getChunk().getPos(), event.getWorld().getRandom());
             chunk = EssenceManager.getEssenceChunk(dim, event.getChunk().getPos());
         }
-        escencias.putFloat("Coal", chunk.getCoal());
-        escencias.putFloat("Copper", chunk.getCopper());
-        escencias.putFloat("Lapis", chunk.getLapis());
-        escencias.putFloat("Iron", chunk.getIron());
-        escencias.putFloat("Gold", chunk.getGold());
-        escencias.putFloat("Redstone", chunk.getRedstone());
-        escencias.putFloat("Diamond", chunk.getDiamond());
-        escencias.putFloat("Emerald", chunk.getEmerald());
-        escencias.putFloat("Quartz", chunk.getQuartz());
-        escencias.putFloat("Netherita", chunk.getNetherita());
+        escencias.putFloat("Coal", chunk.get(Essence.COAL));
+        escencias.putFloat("Copper", chunk.get(Essence.COPPER));
+        escencias.putFloat("Lapis", chunk.get(Essence.LAPIS));
+        escencias.putFloat("Iron", chunk.get(Essence.IRON));
+        escencias.putFloat("Gold", chunk.get(Essence.GOLD));
+        escencias.putFloat("Redstone", chunk.get(Essence.REDSTONE));
+        escencias.putFloat("Diamond", chunk.get(Essence.DIAMOND));
+        escencias.putFloat("Emerald", chunk.get(Essence.EMERALD));
+        escencias.putFloat("Quartz", chunk.get(Essence.QUARTZ));
+        escencias.putFloat("Netherita", chunk.get(Essence.NETHERITE));
         
         silverfishmod.put("Escencias", escencias);
         event.getData().put("SilverFishMod", silverfishmod);

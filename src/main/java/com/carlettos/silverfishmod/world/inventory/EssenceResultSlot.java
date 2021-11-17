@@ -1,6 +1,11 @@
 package com.carlettos.silverfishmod.world.inventory;
 
+import java.util.Optional;
+
+import com.carlettos.silverfishmod.essence.EssenceManager;
+import com.carlettos.silverfishmod.essence.util.ConditionEffect;
 import com.carlettos.silverfishmod.listas.ListaRecipeTypes;
+import com.carlettos.silverfishmod.world.item.crafting.EssenceRecipe;
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.Container;
@@ -60,6 +65,12 @@ public class EssenceResultSlot extends Slot{
     
     @Override
     public void onTake(Player player, ItemStack stack) {
+        if (!player.level.isClientSide) {
+            Optional<EssenceRecipe> optional = player.level.getRecipeManager().getRecipeFor(ListaRecipeTypes.ESSENCE, this.craftContainer, player.level);
+            if(optional.isPresent()) {
+                EssenceManager.addEssenceLevel(player.level, player.chunkPosition(), player.blockPosition(), optional.get().getEssences(), ConditionEffect.ESSENCE_ACTIVATION_CREATE_FLUIDS_CHECK.apply(player.level, player));
+            }
+        }
         this.checkTakeAchievements(stack);
         ForgeHooks.setCraftingPlayer(player);
         NonNullList<ItemStack> list = player.level.getRecipeManager().getRemainingItemsFor(ListaRecipeTypes.ESSENCE, this.craftContainer, player.level);

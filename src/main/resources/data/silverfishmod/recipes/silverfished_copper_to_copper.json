@@ -2,19 +2,16 @@
   "type": "silverfishmod:essence_shaped",
   "pattern": [
     "# ",
-    " S"
+    " #"
   ],
   "key": {
     "#": {
-      "item": "silverfishmod:silverfished_coal"
-    },
-    "S": {
-      "item": "silverfishmod:silverfished_coal"
+      "item": "silverfishmod:silverfished_copper"
     }
   },
   "level": {
-  	"coal": 10,
-  	"copper": 0,
+  	"coal": 0,
+  	"copper": 10,
   	"lapis": 0,
   	"iron": 0,
   	"gold": 0,
@@ -25,7 +22,7 @@
   	"netherite": 0
   },
   "result": {
-    "item": "minecraft:coal",
+    "item": "minecraft:raw_copper",
     "count": 1
   }
 }
