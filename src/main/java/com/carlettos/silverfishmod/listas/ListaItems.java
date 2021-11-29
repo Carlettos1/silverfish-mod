@@ -6,6 +6,7 @@ import com.carlettos.silverfishmod.world.entity.MineralEgg;
 import com.carlettos.silverfishmod.world.entity.MineralSilverfish;
 import com.carlettos.silverfishmod.world.item.Detector;
 import com.carlettos.silverfishmod.world.item.SilverfishAwakener;
+import com.carlettos.silverfishmod.world.item.SilverfishEssence;
 import com.carlettos.silverfishmod.world.item.SilverfishedEssence;
 
 import net.minecraft.world.entity.EntityType;
@@ -22,6 +23,8 @@ public class ListaItems {
     
     public static final Item DETECTOR;
     public static final Item SILVERFISH_AWAKENER;
+    public static final Item SILVERFISH_ESSENCE;
+    
     public static final Item COAL_BUCKET;
     public static final Item COPPER_BUCKET;
     public static final Item LAPIS_BUCKET;
@@ -110,8 +113,10 @@ public class ListaItems {
     
     static {
         ESSENCE_TABLE = createBlockItem(ListaBloques.ESSENCE_TABLE);
+        
         DETECTOR = new Detector(new Item.Properties().tab(Util.GRUPO).defaultDurability(1500));
         SILVERFISH_AWAKENER = new SilverfishAwakener();
+        SILVERFISH_ESSENCE = new SilverfishEssence(new Item.Properties().tab(Util.GRUPO).stacksTo(1));
         
         COAL_BUCKET = createBucket(ListaFluidos.COAL);
         COPPER_BUCKET = createBucket(ListaFluidos.COPPER);

@@ -13,6 +13,9 @@ public class RegistryRecipeSerializer {
     @SubscribeEvent
     public static final void registerMenuTypes(final RegistryEvent.Register<RecipeSerializer<?>> reg) {
         ListaRecipeSerializers.SHAPED_ESSENCE_RECIPE.setRegistryName(Util.getResLoc("essence_shaped"));
+        ListaRecipeSerializers.PORCENTUAL_ESSENCE_RECIPE.setRegistryName(Util.getResLoc("essence_porcentual"));
+
         reg.getRegistry().register(ListaRecipeSerializers.SHAPED_ESSENCE_RECIPE);
+        reg.getRegistry().register(ListaRecipeSerializers.PORCENTUAL_ESSENCE_RECIPE);
     }
 }

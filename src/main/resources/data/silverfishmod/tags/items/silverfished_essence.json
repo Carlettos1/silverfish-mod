@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "silverfishmod:silverfished_coal",
+    "silverfishmod:silverfished_copper",
+    "silverfishmod:silverfished_lapis",
+    "silverfishmod:silverfished_iron",
+    "silverfishmod:silverfished_gold",
+    "silverfishmod:silverfished_redstone",
+    "silverfishmod:silverfished_diamond",
+    "silverfishmod:silverfished_emerald",
+    "silverfishmod:silverfished_quartz",
+    "silverfishmod:silverfished_netherite"
+  ]
+}

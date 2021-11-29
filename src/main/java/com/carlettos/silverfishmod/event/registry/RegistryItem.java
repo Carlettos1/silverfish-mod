@@ -14,6 +14,12 @@ public class RegistryItem {
     public static void registerItems(final RegistryEvent.Register<Item> reg) {
         ListaItems.ESSENCE_TABLE.setRegistryName(Util.getResLoc("essence_table"));
         ListaItems.DETECTOR.setRegistryName(Util.getResLoc("detector"));
+        ListaItems.SILVERFISH_ESSENCE.setRegistryName(Util.getResLoc("silverfish_essence"));
+
+        reg.getRegistry().register(ListaItems.ESSENCE_TABLE);
+        reg.getRegistry().register(ListaItems.DETECTOR);
+        reg.getRegistry().register(ListaItems.SILVERFISH_ESSENCE);
+        
         ListaItems.SILVERFISH_AWAKENER.setRegistryName(Util.getResLoc("silverfish_awakener"));
         ListaItems.COAL_BUCKET.setRegistryName(Util.getResLoc("coal_bucket"));
         ListaItems.COPPER_BUCKET.setRegistryName(Util.getResLoc("copper_bucket"));
@@ -25,9 +31,7 @@ public class RegistryItem {
         ListaItems.EMERALD_BUCKET.setRegistryName(Util.getResLoc("emerald_bucket"));
         ListaItems.QUARTZ_BUCKET.setRegistryName(Util.getResLoc("quartz_bucket"));
         ListaItems.NETHERITE_BUCKET.setRegistryName(Util.getResLoc("netherite_bucket"));
-
-        reg.getRegistry().register(ListaItems.ESSENCE_TABLE);
-        reg.getRegistry().register(ListaItems.DETECTOR);
+        
         reg.getRegistry().register(ListaItems.SILVERFISH_AWAKENER);
         reg.getRegistry().register(ListaItems.COAL_BUCKET);
         reg.getRegistry().register(ListaItems.COPPER_BUCKET);

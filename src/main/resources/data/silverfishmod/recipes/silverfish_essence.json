@@ -1,0 +1,28 @@
+{
+  "type": "silverfishmod:essence_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "tag": "silverfishmod:silverfished_essence"
+    }
+  },
+  "level": {
+  	"coal": 5,
+  	"copper": 5,
+  	"lapis": 5,
+  	"iron": 5,
+  	"gold": 5,
+  	"redstone": 5,
+  	"diamond": 5,
+  	"emerald": 5,
+  	"quartz": 5,
+  	"netherite": 5
+  },
+  "result": {
+    "item": "silverfishmod:silverfish_essence",
+    "count": 1
+  }
+}

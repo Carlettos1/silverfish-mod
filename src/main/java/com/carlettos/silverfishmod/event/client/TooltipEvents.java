@@ -12,8 +12,6 @@ import com.mojang.datafixers.util.Either;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.FormattedText;
 import net.minecraft.network.chat.Style;
-import net.minecraft.tags.ItemTags;
-import net.minecraft.world.Container;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -30,6 +28,7 @@ public class TooltipEvents {
     @OnlyIn(Dist.CLIENT)
     @SubscribeEvent
     public static void onTooltipRender(RenderTooltipEvent.GatherComponents event) {
+        //TODO: hacer al recargar las recetas y añadir a una tag, para ahorrar recursos
         List<Par<Integer, Recipe<?>>> jerarquia = new ArrayList<>();
         List<Item> listaItems = new ArrayList<>();
         List<Item> lista = new ArrayList<>();
@@ -65,7 +64,6 @@ public class TooltipEvents {
                 break;
             }
         }
-        ItemTags.getAllTags().getAvailableTags().forEach(System.out::println);;
         boolean hasany = jerarquia.stream().map(par -> par.y.getIngredients().stream().map(ingr -> ingr.getItems()).toList()).anyMatch(listastacks -> {
             return listastacks.stream().map(stacks -> List.of(stacks).stream().map(stack -> stack.getItem()).toList()).anyMatch(items -> {
                 return items.stream().anyMatch(item1 -> ListaTags.Items.SILVERFISHED.contains(item1));
@@ -73,7 +71,7 @@ public class TooltipEvents {
         });
         if (hasany) {
             event.getTooltipElements().add(Either.left(FormattedText.of("Be aware...", Style.EMPTY.withColor(ChatFormatting.DARK_RED))));
-        }
+        } //19 milisecs el que más se ha demorado, 2 ms de media
     }
     
     @SubscribeEvent
@@ -81,30 +79,7 @@ public class TooltipEvents {
         TooltipHelper.recetas = event.getRecipeManager().getRecipes();
     }
     
-    public static String recipeToString(Recipe<?> recipe) {
-        return recipe.getType() + ": " + recipe.getResultItem().getItem() + ": " + recipe.getIngredients().stream().map(ingredient -> ingredient.toJson()).toList();
-    }
-    
     public static List<Recipe<?>> getRecetas(Item item){
         return TooltipHelper.recetas.stream().filter(recipe -> recipe.getResultItem().getItem().equals(item)).toList();
-    }
-
-    @Deprecated(since = "0.1", forRemoval = false)
-    public static List<Item> getingredientes(Item item) {
-        List<Item> ingredientes = new ArrayList<>();
-        TooltipHelper.recetas.forEach(recipe -> {
-            if(recipe.getResultItem().getItem().equals(item)) {
-                recipe.getIngredients().stream().map(ingrediente -> ingrediente.getItems()).forEach(items -> List.of(items).forEach(item1 -> ingredientes.add(item1.getItem())));
-            }
-        });
-        return ingredientes;
-    }
-    
-    @Deprecated(since = "0.1", forRemoval = false)
-    public static void addRecetas(List<? extends Recipe<? extends Container>> recetas, List<Item> ingredientes, List<Item> resultados) {
-        recetas.forEach((receta) -> {
-            resultados.add(receta.getResultItem().getItem());
-            receta.getIngredients().stream().map(ing -> List.of(ing.getItems())).toList().forEach(list -> list.forEach(ing -> ingredientes.add(ing.getItem())));
-        });
     }
 }
